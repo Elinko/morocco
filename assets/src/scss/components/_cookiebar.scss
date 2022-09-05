@@ -1,0 +1,56 @@
+#cookies-eu-banner {
+  display: block;
+
+  .cookies-content {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: #808180;
+    z-index: 9999;
+
+    .container {
+      font-size: 1.4rem;
+      padding: 15px;
+      color: #41536c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        color: #FFF;
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #FFF;
+        padding: 0 3px;
+        font-weight: bold;
+      }
+
+      @media(max-width: 767px){
+        flex-direction: column;
+
+        p {
+          text-align: center;
+        }
+
+        button {
+          padding: 6px 30px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .cookies {
+
+    &__link {
+
+      &:before {
+        background-color: theme-color('bg-white');
+      }
+    }
+  }
+}
+

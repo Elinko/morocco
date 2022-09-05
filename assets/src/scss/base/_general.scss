@@ -1,0 +1,26 @@
+// import fonts, plugin scss...
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin-ext');
+// @import "./../../font/fontawesome/scss/fontawesome.scss";
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+hr {
+    border: none;
+    height: 2px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+ul, p {
+    max-width: 100%;
+}
