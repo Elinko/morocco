@@ -1,0 +1,42 @@
+.header {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(lg) {
+        min-height: 100px;
+   
+    }
+    
+    
+    .navbar-nav {
+        list-style: none;
+        
+        li {
+            a {
+                padding: 12px!important;
+                font-size: 14px;
+                color: $dark;
+                
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &>a {
+            margin: 7px;
+        }
+
+        .dropdown {
+            margin-left: 10px;
+        }
+    }
+}

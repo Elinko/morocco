@@ -18,12 +18,19 @@ html {
 
 @import "functions";
 @import "variables";
-
-@import "mixins/breakpoints";
-@import "mixins/grid-framework";
-@import "mixins/grid";
+@import "mixins";
+@import "root";
+@import "reboot";
 
 @import "grid";
+@import "forms";
 @import "utilities/display";
 @import "utilities/flex";
 @import "utilities/spacing";
+@import "transitions";
+@import "dropdown";
+@import "nav";
+@import "navbar";
+@import "modal";
+@import "tooltip";
+@import "popover";

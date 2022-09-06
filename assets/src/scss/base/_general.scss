@@ -4,23 +4,46 @@
 
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Nunito,sans-serif;
 }
 
 hr {
-    border: none;
-    height: 2px;
+  border: none;
+  height: 2px;
 }
 
 img {
-    height: auto;
-    max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 ul, p {
-    max-width: 100%;
+  max-width: 100%;
+}
+
+.quote {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    content: '';
+    background: url(/assets/images/ico_quote1.svg);
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    content: '';
+    background: url(/assets/images/ico_quote2.svg);
+  }
 }

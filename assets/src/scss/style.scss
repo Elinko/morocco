@@ -3,27 +3,33 @@
 //import scss
 
 @import 'base/variables';
-
-@import 'vendors/bootstrap/bootstrap-grid.scss';
+@import 'helpers/fonts';
+@import 'vendors/bootstrap/bootstrap-grid';
 @import 'components/cookiebar';
 
-@import 'helpers/functions';
-@import 'helpers/helpers';
-@import 'helpers/mixins';
+//@import '../../../node_modules/slick-carousel/slick/slick.scss';
+//@import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
+@import 'hamburger/hamburgers.scss';
 
 @import 'base/general';
 @import 'base/reset';
 @import 'base/typography';
 
+@import 'helpers/functions';
+@import 'helpers/helpers';
+@import 'helpers/mixins';
+
+
 @import 'components/buttons';
 @import 'components/dropdown';
-
-@import 'pages/contact';
-@import 'pages/home';
+@import 'components/forms';
 
 @import 'partials/footer';
 @import 'partials/header';
 @import 'partials/grid';
 @import 'partials/navigation';
+
+@import 'pages/contact';
+@import 'pages/home';
 
 @import 'shame';

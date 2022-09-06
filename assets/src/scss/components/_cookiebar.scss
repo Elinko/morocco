@@ -1,55 +1,49 @@
-#cookies-eu-banner {
-  display: block;
+.cookies-content {
+  background-color: $secondary;
+  bottom: 0;
+  height: auto;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
 
-  .cookies-content {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    background-color: #808180;
-    z-index: 9999;
+  .container {
+    align-items: center;
+    color: theme-color('');
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: center;
+    padding: 15px;
 
-    .container {
-      font-size: 1.4rem;
-      padding: 15px;
-      color: #41536c;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    p {
+      color: $white;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $white;
+      font-weight: bold;
+      padding: 0 3px;
+    }
+
+    @media(max-width: 767px){
+      flex-direction: column;
 
       p {
-        color: #FFF;
-        margin-bottom: 0;
+        text-align: center;
       }
 
-      a {
-        color: #FFF;
-        padding: 0 3px;
-        font-weight: bold;
-      }
-
-      @media(max-width: 767px){
-        flex-direction: column;
-
-        p {
-          text-align: center;
-        }
-
-        button {
-          padding: 6px 30px;
-          margin-top: 10px;
-        }
+      button {
+        margin-top: 10px;
+        padding: 6px 30px;
       }
     }
   }
+}
 
-  .cookies {
-
-    &__link {
-
-      &:before {
-        background-color: theme-color('bg-white');
-      }
+.cookies {
+  &__link {
+    &::before {
+      background-color: theme-color('bg-white');
     }
   }
 }

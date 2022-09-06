@@ -1,0 +1,51 @@
+.btn {
+    padding: 14px 20px;
+    color: $white!important;
+    border-radius: $border-radius-input;
+    text-transform: uppercase;
+    text-decoration: none!important;
+    transition: 0.3s all;
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 1.1em;
+    border: none; 
+    
+    &:focus {
+         outline: none;
+    }
+
+    &__yellow {
+        background-color: $yellow;
+
+        &:hover {
+        background-color: $yellow-hover;
+        }
+    }
+
+    &__white {
+        color: $dark!important;
+        background-color: $gray-bg;
+
+        &:hover {
+            background-color: $gray-200;
+        }
+    }
+
+    &__transparent {
+        background: none;
+        border: 2px solid $yellow;
+
+        &:hover {
+            background-color: $yellow-hover;
+            border-color: $yellow-hover;
+        }
+    }
+
+    &__blue {
+        background-color: $blue;
+
+        &:hover {
+            background-color: $blue-hover;
+        }
+    }
+}
