@@ -4,6 +4,7 @@
 
 
 html {
+  overflow-x: hidden;
   font-size: 62.5%;
 }
 
@@ -28,22 +29,156 @@ ul, p {
   max-width: 100%;
 }
 
-.quote {
-  position: relative;
+.text-center {
+  text-align: center;
+}
 
-  &:before {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    content: '';
-    background: url(/assets/images/ico_quote1.svg);
+.text-right {
+  text-align: right;
+}
+
+// .quote {
+//   position: relative;
+
+//   &:before {
+//     position: absolute;
+//     top: 20px;
+//     left: 20px;
+//     content: '';
+//     background: url(/assets/images/ico_quote1.svg);
+//   }
+
+//   &:after {
+//     position: absolute;
+//     bottom: 20px;
+//     right: 20px;
+//     content: '';
+//     background: url(/assets/images/ico_quote2.svg);
+//   }
+// }
+
+.heading {
+  position: relative;
+  padding-bottom: 30px;
+  display: block;
+  text-align: right;
+
+  div {
+    text-align: left;
+  }
+
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+ 
+  
   }
 
   &:after {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    right: 0;
+    bottom: 41px;
+    width: 100%;
     content: '';
-    background: url(/assets/images/ico_quote2.svg);
+    height: 2px;
+    background-color: $yellow;
+    z-index: 0;
+    
+    @include media-breakpoint-up(lg) {
+      bottom: 103px;
+    }
+
   }
+  span {
+    display: block;
+    color: $yellow;
+  }
+  h2 {
+    padding-right: 40px;
+    background-color: $white;
+  }
+
+  .btn {
+    background-color: $white;
+    margin-top: inherit;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -90px;
+
+    @include media-breakpoint-up(lg) {
+      display: inline-block;
+      margin-top: 0px;;
+      margin-bottom: 0;
+    }
+  }
+
+  div, a {
+    z-index: 2;;
+  }
+}
+
+section {
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.slick-slider {
+  .slick-dots {  
+    button {
+        &:before {
+            color: $gray-bg;
+            opacity: 1;
+            font-size: 16px;; 
+        }
+    }
+  
+    .slick-active {
+        button {
+            &:before {
+                opacity: 1;
+                color: $yellow; 
+            }
+        }
+    }
+  }
+
+  .slick-arrow {
+    width: 46px;
+    height: 46px;
+    border-radius: 100%;
+    background-color: $white;
+    border: 1px solid $yellow;
+    top: calc(50% - 10px);
+    font-weight: 900;
+    z-index: 2;
+    color: $dark!important;
+    font-family: "Font Awesome 6 Free"!important;
+
+    &:before {
+        color: $dark;
+        font-family: "Font Awesome 6 Free";
+    }
+
+    &.slick-prev { 
+        &:before {
+            content: "\f053";
+        }
+    }
+
+    &.slick-next { 
+        &:before {
+            content: "\f105";
+        }
+    }
+  } 
 }

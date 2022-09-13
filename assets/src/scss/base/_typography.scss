@@ -1,19 +1,21 @@
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5  {
-  color: $dark;
+  color: $text;
 }
 
 
-h2, .h2 {
+h1, .h1, h2, .h2 {
   font-size: 2.4rem;
   font-weight: 900;
-  line-height: 1.2;
-  color:$blue;
+  line-height: 1.2; 
+  margin-bottom: 20px;
+
 
   @include media-breakpoint-up(md) { 
     font-size: 3rem;
   }
   @include media-breakpoint-up(lg) { 
     font-size: 4.8rem;
+    margin-bottom: 30px;
   }
 }
 
@@ -21,7 +23,6 @@ h3, .h3 {
   font-size: 1.8rem;
   font-weight: 900;
   line-height: 1.2;
-  color:$blue;
 
   @include media-breakpoint-up(md) { 
     font-size: 2rem;
@@ -39,19 +40,44 @@ h4, .h4 {
   line-height: 1.2;
   color:$blue;
 
-  @include media-breakpoint-up(md) { 
-    font-size: 2rem;
-  } 
-
-  @include media-breakpoint-up(lg) { 
-    font-size: 2.2rem;
-    
-  }
 }
 
- 
+strong {
+  font-weight: 900;
+
+}
 
 p, a, ul li {
   font-size: 1.6rem; 
+  color: $text;
 }
  
+a {
+  font-weight: 900;
+}
+
+.yellow {
+  color: $yellow!important;
+}
+
+a.link {
+  color: $blue;
+  
+}
+
+.link-arrow {
+  color: $blue;
+  text-decoration: none!important;
+  
+  i {
+    transition: 0.3s all;
+    padding-left: 3px;;
+  }
+
+  &:hover {
+    i {
+      transform: translateX(3px);
+    }
+
+  }
+}

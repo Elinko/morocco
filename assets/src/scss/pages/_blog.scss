@@ -1,0 +1,53 @@
+.blog {
+    .item-trip {
+        background: none;
+        margin-bottom: 55px;
+        padding: 0px;
+        
+        @include media-breakpoint-up(lg) {
+            
+            padding: 20px;
+            margin-bottom: 100px;
+        }
+    }
+
+    .for-you {
+        margin-top: -30px;
+        
+        @include media-breakpoint-up(lg) {
+            margin-top: -100px;
+            
+        }
+    }
+
+
+    .more-trip {
+        margin-bottom: 50px;
+        
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 100px;
+        }
+    }
+}
+
+.trip {
+    &__badges {
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;        
+        span {
+            margin-right: 12px;
+        }
+    }
+
+    &__slider {
+        img {
+            border-radius: 20px;
+        }
+
+        .slick-list {
+            position: relative;
+            z-index: 0;
+        }
+    }
+}

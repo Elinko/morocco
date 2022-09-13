@@ -1,16 +1,33 @@
 .home-slider { 
     position: relative;
+    min-height: 600px;
+
+    
+    @include media-breakpoint-down(md) { 
+        min-height: inherit;
+
+        .slick-track {
+            display: flex;
+        }
+    }
+
 
     .slick-dots {
         position: absolute;
         bottom: 60px;
         text-align: right;
         right: 60px;
+
+        @include media-breakpoint-down(md) {
+            bottom: 20px;
+
+        }
+
     }
 
     
-    &__content {
-        height: 600px;
+    .home-slider__content {
+        min-height: 600px;
         position: relative;
         padding: 30px;
         color: $white;
@@ -19,8 +36,21 @@
         border-radius: $border-radius;
         align-items: end;
 
+        @include media-breakpoint-down(md) {
+            padding: 20px;
+            height: inherit;
+
+        }
+
         .row {
             width: 100%;
+            padding-top: 100px;
+
+            @include media-breakpoint-down(md) {
+                padding-top: 30px;
+                padding-bottom: 0px;
+
+            }
         }
 
         img {
@@ -40,23 +70,193 @@
 
         h2 {
             color: $white;
-            margin-bottom: 36px;
+            margin-bottom: 20px;
         }
 
         p { 
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
 
         @include media-breakpoint-up(lg) {
-            padding: 60px;
+            padding: 60px; 
+            h2 {
+                color: $white;
+                margin-bottom: 36px;
+            }
+    
+            p { 
+                margin-bottom: 50px;
+            }
         }
     }
 
     &__buttons {
+
         a {
             &:nth-child(2) {
                 margin-left: 30px;;
             }
+        }
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            align-items: flex-start;
+
+            a {
+                margin-left: 0px!important;
+                margin-bottom: 20px;
+
+            }
+        }
+    }
+}
+
+.advise {
+    .item-trip {
+        background-color: $gray-bg;
+    }
+}
+
+.why-us {
+    h2 {
+        margin-bottom: 30px;
+    }
+    &__item {
+        .image {
+            background-color: $blue-light;
+            display: flex;
+            justify-content: center;
+            align-items: center;          
+            width: 58px;
+            height: 58px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        strong   {
+            margin-bottom: 12px;
+            display: block; 
+        }
+
+        p {
+            font-size: 1.4rem;;  
+            margin-bottom: 20px; 
+
+            @include media-breakpoint-up(lg) {
+
+              margin-bottom: 50px; 
+             }
+        }
+    }
+}
+
+.for-you {
+    img {
+        border-radius: 20px;
+    } 
+
+    &__content {
+        padding: 30px 0 0;
+
+        @include media-breakpoint-up(lg) {
+            padding: 50px 50px 0;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        a {
+            display: inline-block;
+        }
+
+    }
+
+    @include media-breakpoint-down(md) {
+
+    }
+}
+
+.tolding-about {
+    &__wrapper {
+        max-width: 600px;
+        margin: 50px auto;
+
+        .slick-prev {
+            top: calc(50% - 40px);
+            left: -100px; 
+        }
+
+        .slick-next {
+            right:-100px; 
+            top: calc(50% - 40px);
+        }
+
+    }
+    &__content {
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        background-color: $gray-bg;
+        
+        p  {
+            margin-top: 10px;;
+        }
+
+        .text-right {
+            padding-right: 20px;
+            img {
+                margin-left: 100%;
+            }
+        }
+    }
+
+    &__name {
+        margin-bottom: 30px;
+    }
+}
+
+.last-blog {
+    .container {
+        &>.row {
+            margin-top: -15px;
+        }
+    }
+}
+
+.health {
+    background-color: $yellow-light;
+    border-radius: 20px;
+    padding: 20px;
+
+    @include media-breakpoint-up(lg) {
+        padding: 80px;
+
+    }
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+.write-us {
+    padding-bottom: 80px;
+    p {
+        margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-down(lg) {
+         padding-bottom: 40px;
+
+        img {
+            margin-bottom: 20px;
         }
     }
 }
