@@ -1,6 +1,7 @@
 .home-slider { 
     position: relative;
     min-height: 600px;
+    margin-bottom: 0!important;
 
     
     @include media-breakpoint-down(md) { 
