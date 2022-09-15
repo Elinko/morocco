@@ -16,9 +16,10 @@
 
     &__yellow {
         background-color: $yellow;
+        border: 1px solid $yellow;
 
         &:hover {
-        background-color: $yellow-hover;
+        background-color: $blue; 
         }
     }
 
@@ -33,7 +34,7 @@
 
     &__transparent {
         background: none;
-        border: 2px solid $yellow;
+        border: 1px solid $yellow;
 
         &--black {
             color: $text!important;
@@ -41,16 +42,20 @@
 
 
         &:hover {
-            background-color: $yellow-hover;
-            border-color: $yellow-hover;
+            background-color: $blue; 
+            border: 1px solid $yellow;
+
         }
     }
 
     &__blue {
         background-color: $blue;
+        border: 1px solid $blue;
 
         &:hover {
             background-color: $blue-hover;
+            border: 1px solid $yellow;
+
         }
     }
 
@@ -95,5 +100,39 @@
             padding-right: 8px;
         }
 
+    }
+ }
+
+ .btn-small {
+    padding: 10px 20px;
+    border-radius: 28px;
+    font-size: 1.4rem;
+    line-height: 1em;
+    font-weight: 900;
+    color: $white;
+    
+    &__red {
+        background-color: $red;
+    }
+
+    &__green {
+        background-color: $green;
+    }
+
+    &__green2 {
+        background: $green2;
+    }
+
+    &__blue {
+        background-color: $blue;
+    }
+
+    &__violet2 {
+        background-color: $violet;
+    }
+
+    &__gray {
+        background-color: $gray-badge;
+        color: $gray-800;
     }
  }

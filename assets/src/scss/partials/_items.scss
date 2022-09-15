@@ -124,6 +124,10 @@
         text-align: left;
         height: 100%;
 
+        &.yellow {
+            background-color: $yellow-light;
+        }
+
         @include media-breakpoint-up(lg) {
             padding: 80px;
 
@@ -155,5 +159,41 @@
             }
                 padding-left: 0;
         }
+    }
+}
+
+.item-inspiration {
+    padding: 16px;
+    border-radius: 20px;
+    transition: 0.3s all;
+    display: block;
+    margin-bottom: 60px;
+    text-decoration: none!important;
+    img {
+        width: 100%;
+        height: 40%;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+        color: $text;
+        
+        @include media-breakpoint-up(md) {
+        margin-bottom: 8px;
+        min-height: 44px;
+        }
+    }
+
+    span {
+        font-weight: 400;
+        font-size: 1.4rem;
+    }
+
+    &:hover {
+        background-color: $heading-bg;
     }
 }

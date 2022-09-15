@@ -37,6 +37,13 @@ ul, p {
   text-align: right;
 }
 
+.col-lg-25 {
+  @include media-breakpoint-up(lg) {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
 // .quote {
 //   position: relative;
 

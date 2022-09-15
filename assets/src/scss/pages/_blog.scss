@@ -102,3 +102,106 @@
         }
     }
 }
+
+.schhedule {
+    padding: 0 40px;
+    background-color: $gray-bg;
+    border-radius: 20px;
+
+    &__item {
+        padding: 40px 0;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $gray-400;
+
+        &:last-child {
+            border: 0;
+        }
+
+        &--col {
+            min-width: 120px;
+            width: 22%;
+            padding: 0 5px;
+
+            h3 {
+                margin: 0;
+            }
+            
+            &.room {
+                width: 28%;
+            }
+
+            &.price {
+                width: 8%;
+                text-align: center;
+                min-width: 100px;
+            }
+
+            &.totrip {
+                text-align: right;
+                min-width: 130px;
+
+            }
+        }
+
+        @include media-breakpoint-down(lg) { 
+            flex-wrap: wrap;
+
+            &--col {
+                width: 50%!important;
+                text-align: left!important;
+            }
+        }
+
+        @include media-breakpoint-down(sm) { 
+            padding: 20px 0;
+
+            &--col {
+                width: 100%!important;
+
+            }
+        }
+
+    }
+}
+
+.include {
+    @include media-breakpoint-down(sm) { 
+        margin-bottom: 30px;
+    }
+    &__check {
+        background-color: $green-light;
+        border-radius: 8px;
+        width: 58px;
+        height: 58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 12px;
+
+        i {
+            color: $green;
+            font-size: 1.8rem;
+        }
+    }
+
+    p {
+        margin-bottom: 12px;
+        font-size: 1.4rem;
+    }
+}
+
+.categories {
+    &__wrap {
+        display: flex;
+        
+        a {
+            display: block;
+            margin: 12px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
