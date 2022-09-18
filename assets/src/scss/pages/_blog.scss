@@ -205,3 +205,134 @@
         }
     }
 }
+
+.inspiration-detail {
+    &__heading {
+        width: 100%;
+        height: 550px ;
+        border-radius: 20px;
+        position: relative;
+        padding: 60px;
+
+        @include media-breakpoint-down(md) { 
+            height: 350px;
+            padding: 30px;
+        }
+
+        @include media-breakpoint-down(sm) { 
+            height: auto;
+
+            .d-flex {
+                div {
+                    margin-top: 100px;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(xs) {  
+            .d-flex {
+                div {
+                    margin-top: 50px;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            object-fit: cover;
+            z-index: 0;
+            border-radius: 20px;
+        }
+
+        span {
+            display: inline-block;
+            align-self: flex-start;
+        }
+ 
+        h1 {
+            color: $white;
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
+        .d-flex {
+            z-index: 2;
+            position: relative;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    &__content {
+        p {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            margin-bottom: 25px;
+        }
+
+        img {
+            margin-bottom: 60px;
+            margin-top: 40px;
+        }
+    }
+}
+
+.contact {
+    &__info {
+        margin-bottom: 40px;
+        h4 {
+            margin-bottom: 16px;
+            color: $text;
+        }
+
+        p {
+            margin-bottom: 6px;
+
+            a {
+                font-weight: 600;
+            }
+        }
+        .icon {
+            width: 58px;
+            height: 58px;
+            background-color: $blue-light;
+            border-radius: 8px;   
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+            margin-bottom: 30px;
+            
+            i {
+                font-size: 1.8rem;
+                color: $blue;
+            }
+        }
+
+        @include media-breakpoint-down(md) { 
+            .icon {
+                margin-bottom: 15px;
+            }
+            h4 {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .write-us {
+        &__map {
+
+        }
+    }
+}
