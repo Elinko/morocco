@@ -1,83 +1,10 @@
-<!DOCTYPE html>
-<html lang="sk">
-  <head>
-  <title>Morocco</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-    <!--[if lt IE 9]>
-        <link rel="stylesheet" href="./public/dist/css/style.css?_v=6ju0w">
-    <![endif]--> 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&amp;display=swap&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" async type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css "/>
-    <link rel="stylesheet" async type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-     
+<?php
 
 
+get_header();
+?>
 
-
-    <link rel="stylesheet" async media="all" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" media="all" href="assets/dist/css/style.css?v1.1">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  </head>
-  
-  <body>
-    <header class="header main-header"> 
-      <div class="container">
-        <nav class="navbar navbar-expand-lg  "> 
-          <a class="navbar-brand" href="#">
-            MArocco dream tour 
-          </a>
-          <button class="navbar-toggler hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="hamburger-box">
-              <div class="hamburger-inner"></div>
-            </div>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Ponuka zájazdov</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Zájaz na mieru</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="#">Inšpirácie</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sustainability</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="#">Certificates</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            </ul>
-            <div class="social">
-              <a href="">
-                <img src="/assets/images/ico_fb.svg" alt="">
-              </a>
-              <a href="">
-                <img src="/assets/images/ico_ig.svg" alt="">
-              </a>
-              <div class="dropdown">
-                <button class="btn btn__white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Slovensky
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Slovensky</a>
-                  <a class="dropdown-item" href="#">Anglicky</a> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-        
-      </div>
-    </header>
-    <main class="page">
+<main class="page">
       <div class="container">
         <div class="home-slider">
           <div class="home-slider__content">
@@ -212,58 +139,31 @@
         </div>
       </section>
       <section class="why-us">
+        <?php 
+          $whyus = get_field('preco_prave_my'); 
+        ?>
         <div class="container">
           <div class="row">
             <div class=" col-lg-4 col-12">
-              <h3 class="yellow">Lorem ipsum dolor</h3>
-              <h2>Prečo práve s&nbsp;nami?</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</p>
+              <h3 class="yellow"><?= $whyus['zlty_nadpis']  ?></h3>
+              <h2><?= $whyus['nadpis']  ?></h2>
+              <p>
+              <?= $whyus['text']  ?>  
+              </p>
               <br>
             </div>
             <div class=" col-lg-8">
               <div class="row">
-                <div class="col-md-6 col-xl-4 why-us__item">
-                  <div class="image"> 
-                    <img src="/assets/images/ico_palm.svg" alt="">
+                <?php foreach ($whyus['polozky'] as $key => $value): ?>
+                  <div class="col-md-6 col-xl-4 why-us__item">
+                    <div class="image"> 
+                      <img src="<?= $value['ikona'] ?> " alt="">
+                    </div>
+                    <strong><?= $value['nazov'] ?></strong>
+                    <p><?= $value['text'] ?></p>
                   </div>
-                  <strong>Každé miesto sme navštívili a dôverne poznáme</strong>
-                  <p>Gummies cupcake tart jelly beans chocolate cupcake. Croissant biscuit pie</p>
-                </div>
-                <div class="col-md-6 col-xl-4 why-us__item">
-                  <div class="image"> 
-                    <img src="/assets/images/ico_palm.svg" alt="">
-                  </div>
-                  <strong>Každé miesto sme navštívili a dôverne poznáme</strong>
-                  <p>Gummies cupcake tart jelly beans chocolate cupcake. Croissant biscuit pie</p>
-                </div>
-                <div class="col-md-6 col-xl-4 why-us__item">
-                  <div class="image"> 
-                    <img src="/assets/images/ico_palm.svg" alt="">
-                  </div>
-                  <strong>Každé miesto sme navštívili a dôverne poznáme</strong>
-                  <p>Gummies cupcake tart jelly beans chocolate cupcake. Croissant biscuit pie</p>
-                </div>
-                <div class="col-md-6 col-xl-4 why-us__item">
-                  <div class="image"> 
-                    <img src="/assets/images/ico_palm.svg" alt="">
-                  </div>
-                  <strong>Každé miesto sme navštívili a dôverne poznáme</strong>
-                  <p>Gummies cupcake tart jelly beans chocolate cupcake. Croissant biscuit pie</p>
-                </div>
-                <div class="col-md-6 col-xl-4 why-us__item">
-                  <div class="image"> 
-                    <img src="/assets/images/ico_palm.svg" alt="">
-                  </div>
-                  <strong>Každé miesto sme navštívili a dôverne poznáme</strong>
-                  <p>Gummies cupcake tart jelly beans chocolate cupcake. Croissant biscuit pie</p>
-                </div>
-                <div class="col-md-6 col-xl-4 why-us__item">
-                  <div class="image"> 
-                    <img src="/assets/images/ico_palm.svg" alt="">
-                  </div>
-                  <strong>Každé miesto sme navštívili a dôverne poznáme</strong>
-                  <p>Gummies cupcake tart jelly beans chocolate cupcake. Croissant biscuit pie</p>
-                </div>
+                <?php endforeach; ?>
+               
 
               </div>
             </div>
@@ -293,44 +193,24 @@
             <h2>Povedali o nás</h2>
           </div>
           <div class="tolding-about__wrapper">
-            <div>
+            <?php 
+              $tolding = get_field('povedali_o_nas'); 
+            ?>
+            <?php foreach ($tolding as $key => $value): ?>
+              <div>
               <div class="tolding-about__content">
                 <img src="/assets/images/ico_quote1.svg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, feli</p>
+                <p><?= $value['text']  ?></p>
                 <div class="text-right">
                   <img src="/assets/images/ico_quote2.svg" alt="">
                 </div> 
               </div>
               <div class="text-center tolding-about__name">
 
-                <strong>Helena Plavčíková Rybanská</strong>
+                <strong><?= $value['name']  ?></strong>
               </div>
             </div>
-            <div>
-              <div class="tolding-about__content">
-                <img src="/assets/images/ico_quote1.svg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, feli</p>
-                <div class="text-right">
-                  <img src="/assets/images/ico_quote2.svg" alt="">
-                </div> 
-              </div>
-              <div class="text-center tolding-about__name">
-
-                <strong>Helena Plavčíková Rybanská</strong>
-              </div>
-            </div>
-            <div>
-              <div class="tolding-about__content">
-                <img src="/assets/images/ico_quote1.svg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, feli</p>
-                <div class="text-right">
-                  <img src="/assets/images/ico_quote2.svg" alt="">
-                </div> 
-              </div>
-              <div class="text-center tolding-about__name">
-                <strong>Helena Plavčíková Rybanská</strong>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </section>
@@ -390,16 +270,16 @@
       <section class=" ">
         <div class="container">
           <div class="health">
+          <?php 
+              $health = get_field('zdravotne_informacie'); 
+            ?>
             <h2>Zdravotné informácie</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
-            <p>Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>
-              Aenean euismod bibendum laoreet. <a href="" class="link">Proin gravida dolor</a> sit amet lacus accumsan et viverra justo commodo.
-
-            </p>
-
+            <?= $value['text']  ?> 
+      
+              <br>
+              <br>
             <div class="text-right">
-              <a href="" class="link-arrow">Zobraziť viac <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+              <a href="<?= $value['link']  ?>" class="link-arrow">Zobraziť viac <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -409,16 +289,18 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <img src="/assets/images/contact.png" alt="">
+              <img src="<?php bloginfo('template_url');  ?>/assets/images/contact.png" alt="">
             </div>
             <div class="col-md-6">
               <h3 class="yellow">
-                Máte otázke?
+                Máte otázky?
               </h3>
               <h2>
                 Napíšte nám
               </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+              <p>
+                <?php echo get_field('napiste_nam_text'); ?>
+              </p>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
@@ -453,59 +335,6 @@
 
 
     </main>
-    
-    <footer >
-      <div class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 col-xl-3 ">
-              <strong>KONTAKT</strong>
-              <p>Na ulici 16, Bratislava, Slovakia</p>
-              <p>
-                <a href="tel: +421 907 654 321">+421 907 654 321</a>
-              </p>  
-              <a href="mailto: info@moroccodreamtour.com">info@moroccodreamtour.com</a>
-            </div>
-            <div class="col-md-4 col-xl-3 ">
-              <strong>INFORMÁCIE</strong>
-              <p>IČO: 53655869</p>
-              <p>DIČ: SK2121481879</p>
-              <p>Č.Ú.: SK40 8360 5207 0042 0001 2345</p>
-            </div>
-            <div class="col-md-4 col-xl-3 social">
-              <strong>SOCIÁLNE SIETE</strong>
-              <div class="d-flex">
-                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-square-instagram"></i></a>
-              </div>
-            </div>
 
-          </div>
-        </div>
-      </div>
-      <div class="after-footer">
-        <div  class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <a href="">Logo</a>
-            </div>
-            <div class="col-lg-6">
-              <p>
-                Sme členmi <a href="" class="link">Slovenská asociácia cestovných kancelárii a cestovných agentúr</a>
-              </p>
-                
-            </div>
-          </div>
-        </div>
-      </div> 
-    </footer>
-    
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
-    
-    <script src="./assets/dist/js/all.js?_v=6ju0w" async></script>
-    
-  </body>
-  </html>
-  
+<?php 
+get_footer();

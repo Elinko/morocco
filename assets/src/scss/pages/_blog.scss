@@ -214,6 +214,11 @@
         position: relative;
         padding: 60px;
 
+        .btn-small {
+            margin-right: 15px ;
+ 
+        }
+
         @include media-breakpoint-down(md) { 
             height: 350px;
             padding: 30px;

@@ -1,60 +1,70 @@
-# Inštalácia Gulp
+[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
-- Stiahnite si a nainštalujte [Node.js][node-js]
-- Stiahnite si tento náš **template** pre gulp.
-- Po otvorení priečinku new-gulp v konzole, zadajte príkaz `npm install`, tento príkaz vám nainštaluje node-modules, ktorý sa nevkladá do git-u, pretože si ho node vygeneruje.
-- Ďalej si nainštalujeme Gulp 4 pomocou node.js s príkazom `npm install gulp@next`  
-- Na spustenie Gulp-u máme **2 základné príkazy**. Príkaz `gulp build` – vygeneruje skomprimovaný js a scss so všetkými prefixmi. A príkaz `gulp watch`, ktorý spraví to isté ako “gulp build“ avšak nám ešte otvorí nové okno v prehliadačí, v ktoré sa bude automaticky znova načítavať ak vykonáme nejakú zmenu v scss alebo js.
-- Oficiálny návod na [Inštaláciu][quick-start].
+_s
+===
 
-## gulpfile.babel.js
+Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
-Gulpfile.babel.js súbor, ktorý budeme editovať. Obsahuje už priamo úlohy Gulp-u. Primárne budeme editovať len časť kódu, kde sa definujú cesty k súborom v premennej **paths**. Cestu treba nastaviť od umiestnenia samotného gulpfile.bable.js.
+My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
 
-### Upravujeme
+* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
+* A just right amount of lean, well-commented, modern, HTML5 templates.
+* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
+* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
+* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
+* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
+* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
+Note: `.no-sidebar` styles are automatically loaded.
+* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
+* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
+* Licensed under GPLv2 or later. :) Use it to make something cool.
 
-- public/src/html/index.html 
-- Blizsie info k includovaniu part .html [linka][include-html].
+Installation
+---------------
 
-### Build
+### Requirements
 
-Po builde sa vytvorí index.html v root. Tento už bude obsahovať **head** a **footer** podľa toho či sa jedná o verziu devel alebo production.   
+`_s` requires the following dependencies:
 
-```js
+- [Node.js](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
 
-const paths = {
-  styles: {
-    src: 'public/src/scss/style.scss',
-    watch: 'public/src/scss/**/*.scss',
-    dest: 'public/dist/css/'
-  },
-  scripts: {
-    srcincludes:[
-      'public/src/js/includes/jquery-3.3.1.min.js',
-      'public/src/js/includes/popper.min.js',
-      'public/src/js/includes/bootstrap.min.js',      
-    ]
-    src: [
-        'public/src/js/app.js',
-        'public/src/js/cookiebar.js',
-    ],
-    dest: 'public/dist/js/'
-  },
-  html: {
-    watch: [
-        'public/src/html/*.html',
-    ]
-  },
-  include:{
-    src: 'public/src/html/index.html',
-    dest: '/'
-  }
-}
+### Quick Start
 
+Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+
+1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
+2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
+3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
+4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
+5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
+6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
+
+Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+
+### Setup
+
+To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
+
+```sh
+$ composer install
+$ npm install
 ```
 
+### Available CLI commands
 
-[node-js]: https://nodejs.org/en/
-[new-gulp]: https://git.esx.sk/elite/gulp-template/tree/master/new-gulp
-[quick-start]: https://gulpjs.com/docs/en/getting-started/quick-start
-[include-html]: https://www.npmjs.com/package/gulp-file-include
+`_s` comes packed with CLI commands tailored for WordPress theme development :
+
+- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
+- `composer lint:php` : checks all PHP files for syntax errors.
+- `composer make-pot` : generates a .pot file in the `languages/` directory.
+- `npm run compile:css` : compiles SASS files to css.
+- `npm run compile:rtl` : generates an RTL stylesheet.
+- `npm run watch` : watches all SASS files and recompiles them to css when they change.
+- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
+- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
+- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+
+Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+
+Good luck!

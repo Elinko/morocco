@@ -141,3 +141,38 @@
         background-color: $yellow;
     }
  }
+
+ .slick-arroww {
+    width: 46px;
+    height: 46px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    border: 1px solid #E5B354; 
+    position: relative;
+    font-weight: 900;
+    display: block;
+    z-index: 2;
+    color: #222222 !important;
+    font-family: "Font Awesome 6 Free" !important;
+
+    &:before {
+        position: absolute;
+        top: 0;    top: 11px;
+        left: 17px;
+        color: #222222;
+        font-family: "Font Awesome 6 Free";
+    }
+
+    &.slick-next  {
+        
+        right: 0;
+
+        &:before {
+            content: "\f105";
+        }
+    }
+
+    &.slick-prev:before {
+        content: "\f053";
+    }
+ }
