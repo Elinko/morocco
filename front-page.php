@@ -8,7 +8,7 @@ get_header();
       <div class="container">
         <div class="home-slider">
           <div class="home-slider__content">
-            <img src="/assets/images/Header01.png" alt="">
+            <img src="<?php bloginfo('template_url');  ?>/assets/images/Header01.png" alt="">
             <div class="row">
               <div class="col-lg-6 col-md-8 col-12">
                 <h3>Moracco dream tour</h3>
@@ -22,7 +22,7 @@ get_header();
             </div>
           </div>
           <div class="home-slider__content">
-            <img src="/assets/images/Header01.png" alt="">
+            <img src="<?php bloginfo('template_url');  ?>/assets/images/Header01.png" alt="">
             <div class="row">
               <div class="col-lg-6 col-md-8 col-12">
                 <h3>Moracco dream tour</h3>
@@ -36,7 +36,7 @@ get_header();
             </div>
           </div>
           <div class="home-slider__content">
-            <img src="/assets/images/Header01.png" alt="">
+            <img src="<?php bloginfo('template_url');  ?>/assets/images/Header01.png" alt="">
             <div class="row">
               <div class="col-lg-6 col-md-8 col-12">
                 <h3>Moracco dream tour</h3>
@@ -50,7 +50,7 @@ get_header();
             </div>
           </div>
           <div class="home-slider__content">
-            <img src="/assets/images/Header01.png" alt="">
+            <img src="<?php bloginfo('template_url');  ?>/assets/images/Header01.png" alt="">
             <div class="row">
               <div class="col-lg-6 col-md-8 col-12">
                 <h3>Moracco dream tour</h3>

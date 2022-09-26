@@ -157,15 +157,14 @@
 
     &:before {
         position: absolute;
-        top: 0;    top: 11px;
-        left: 17px;
+        top: 12px;
+        left: 16px;  
         color: #222222;
         font-family: "Font Awesome 6 Free";
     }
 
     &.slick-next  {
         
-        right: 0;
 
         &:before {
             content: "\f105";

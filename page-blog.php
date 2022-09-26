@@ -12,11 +12,11 @@
  * @package morocco
  */
   /*
-	 Template Name: Inspiration
+	 Template Name: Blog
  */
 get_header();
 ?>
-
+ 
 <main class="page blog">
       <div class="container">
         <div class="item-heading"> 
@@ -42,12 +42,14 @@ get_header();
 			<?php 
 
 				$args = array(
-					'taxonomy' => 'Inspiration_category',
+					'taxonomy' => 'category',
 					'orderby' => 'name',
 					'order'   => 'ASC'
 				);
 
 				$cats = get_categories($args);
+
+        // var_dump($cats );
 
 				foreach($cats as $cat) {
 			?>
@@ -69,13 +71,12 @@ get_header();
         </div>
       </section>
        
-	<section class="advise">
+      <section class="advise">
         <div class="container">
           <div class="row">
 
           <?php 
             $args = array( 
-				'post_type'   => 'inspiracie',
             );
             $my_posts = get_posts( $args );
             
@@ -131,25 +132,24 @@ get_header();
             <a href="" class="btn btn__blue">ZOBRAZIŤ ĎALŠIE</a>
           </div>
         </div>
-	</section>
-
-	<section class="for-you">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-			<img src="/assets/images/ref_04.png" alt="">
-			</div>
-			<div class="col-md-6 d-flex align-items-center">
-			<div class="for-you__content">
-				<h3 class="yellow">Vytvorené pre vás</h3>
-				<h2>Chcete dovolenku na mieru?</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-				<a href="" class="btn btn__blue">MÁM ZÁUJEM</a>
-			</div>
-			</div>
-		</div>
-		</div>
-	</section>
+      </section>
+      <section class="for-you">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="/assets/images/ref_04.png" alt="">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+              <div class="for-you__content">
+                <h3 class="yellow">Vytvorené pre vás</h3>
+                <h2>Chcete dovolenku na mieru?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+                <a href="" class="btn btn__blue">MÁM ZÁUJEM</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <br>
       <br>
 

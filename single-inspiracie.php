@@ -37,13 +37,7 @@ get_header();
         <div class="container">
           <div class="row">
             <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-              <h2>Soufflé sweet roll croissant</h2>
-              <p>Soufflé sweet roll croissant oat cake tart pie. Carrot cake sugar plum cotton candy jelly beans icing apple pie chupa chups. 
-              </p>
-              
-              <p>
-                    Shortbread oat cake bear claw pie caramels. Halvah chocolate icing wafer dragée apple pie sweet marzipan. Dessert gingerbread chocolate bar lemon drops sweet jelly beans. Candy lollipop brownie donut pastry. Muffin liquorice cookie tart soufflé jelly-o carrot cake jelly. Muffin topping chocolate cake dessert jelly-o cookie croissant donut. Bear claw jelly tootsie roll jelly candy canes ice cream caramels muffin candy. Sesame snaps lemon drops dessert chocolate muffin jelly-o chocolate bar cookie. Cookie jelly-o chupa chups toffee caramels. Caramels jelly beans brownie gummies cake sweet danish candy canes. Bear claw biscuit marshmallow marshmallow cake croissant jelly. Cookie sweet roll biscuit bonbon cotton candy macaroon ice cream. Jelly-o sweet roll powder ice cream oat cake chocolate cake tart jelly beans macaroon. Icing dessert candy canes biscuit gingerbread lemon drops. Jelly-o caramels gummi bears ice cream soufflé brownie pudding. Danish powder toffee tootsie roll jelly beans cake tiramisu. Sweet tiramisu oat cake icing macaroon pastry muffin wafer. Wafer chocolate fruitcake jelly beans icing jelly. Cheesecake candy chocolate bar jelly beans dragée halvah biscuit pie. Marzipan donut powder pudding gummies candy. Donut bonbon bonbon lemon drops apple pie sugar plum danish powder pastry. Bonbon icing caramels jelly beans biscuit macaroon cheesecake fruitcake muffin. Jelly beans cheesecake sweet roll pastry gingerbread macaroon cotton candy soufflé sweet roll. Caramels marzipan sweet roll caramels pudding. Halvah biscuit pie cake ice cream sweet roll.</p>
-              
+            <?php echo the_content() ?>
 
 
             </div>
@@ -56,7 +50,7 @@ get_header();
             <?php  $previous = get_previous_post() ;
               $next = get_next_post();
             ?>
-            <a href="<?php echo $previous->guid; ?>">Predošlí článok</a>  
+            <a href="<?php echo $previous->guid; ?>" class="d-flex align-items-center"><span class="slick-arroww slick-prev"></span><strong>Predošlí článok</strong>  </a>  
             <a href="<?php echo $next->guid; ?>    " class="d-flex align-items-center"><strong>Nasledujúci článok</strong> <span class="slick-arroww slick-next"></span></a> 
           </div>
         </div>

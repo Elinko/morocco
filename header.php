@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
     <link rel="stylesheet" async media="all" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" media="all" href="<?php bloginfo('template_url');  ?>/assets/dist/css/style.css?v1.1">
+    <link rel="stylesheet" media="all" href="<?php bloginfo('template_url');  ?>/assets/dist/css/style.css?v1.1cc">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   
 
@@ -36,7 +36,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg  "> 
           <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
-            MArocco dream tour 
+            Morocco dream tour 
           </a>
           <button class="navbar-toggler hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger-box">
