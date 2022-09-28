@@ -76,6 +76,8 @@
 
         p { 
             margin-bottom: 20px;
+            color: $white;
+
         }
 
         @include media-breakpoint-up(lg) {

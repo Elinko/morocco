@@ -6,63 +6,34 @@ get_header();
 
 <main class="page">
       <div class="container">
+        <?php 
+          $slider = get_field('slider');
+          // var_dump($slider);
+        ?>
+ 
         <div class="home-slider">
-          <div class="home-slider__content">
-            <img src="<?php bloginfo('template_url');  ?>/assets/images/Header01.png" alt="">
-            <div class="row">
-              <div class="col-lg-6 col-md-8 col-12">
-                <h3>Moracco dream tour</h3>
-                <h2>Zažiť Maroko, poznať slnko</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
-                <div class="d-flex home-slider__buttons" >
-                  <a href="" class="btn btn__yellow">ZOBRAZIŤ PONUKU</a>
-                  <a href="" class="btn btn__transparent">ZÁJAZ NA MIERU</a>
+          <?php foreach($slider as $slide): ?>
+            <div class="home-slider__content">
+              <img src="<?php echo $slide['obrazok']  ?>" alt="">
+              <div class="row">
+                <div class="col-lg-6 col-md-8 col-12">
+                  <h3><?php echo $slide['zlty_nadpis']  ;?></h3>
+                  <h2><?php echo $slide['biely_nadpis'];  ?></h2>
+                  <p>
+                    <?php echo $slide['text']  ?>
+                  </p>
+                  <div class="d-flex home-slider__buttons" >
+                    <?php if($slide['1button_link']): ?>
+                        <a href="<?php echo $slide['1button_link']  ?>" class="btn btn__yellow"><?php echo $slide['1button_text']  ?></a>
+                      <?php endif; ?>
+                      <?php if($slide['2button_link']): ?>
+                        <a href="<?php echo $slide['2button_link']  ?>" class="btn btn__transparent"><?php echo $slide['2button_text']  ?></a>
+                      <?php endif; ?>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="home-slider__content">
-            <img src="<?php bloginfo('template_url');  ?>/assets/images/Header01.png" alt="">
-            <div class="row">
-              <div class="col-lg-6 col-md-8 col-12">
-                <h3>Moracco dream tour</h3>
-                <h2>Zažiť Maroko, poznať slnko</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
-                <div class="d-flex home-slider__buttons" >
-                  <a href="" class="btn btn__yellow">ZOBRAZIŤ PONUKU</a>
-                  <a href="" class="btn btn__transparent">ZÁJAZ NA MIERU</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="home-slider__content">
-            <img src="<?php bloginfo('template_url');  ?>/assets/images/Header01.png" alt="">
-            <div class="row">
-              <div class="col-lg-6 col-md-8 col-12">
-                <h3>Moracco dream tour</h3>
-                <h2>Zažiť Maroko, poznať slnko</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
-                <div class="d-flex home-slider__buttons" >
-                  <a href="" class="btn btn__yellow">ZOBRAZIŤ PONUKU</a>
-                  <a href="" class="btn btn__transparent">ZÁJAZ NA MIERU</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="home-slider__content">
-            <img src="<?php bloginfo('template_url');  ?>/assets/images/Header01.png" alt="">
-            <div class="row">
-              <div class="col-lg-6 col-md-8 col-12">
-                <h3>Moracco dream tour</h3>
-                <h2>Zažiť Maroko, poznať slnko</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibe dolor sit amet, consectetur adipiscing elit. Aenean euismod bibe dolor sit amet, consectetur adipiscing elit. Aenean euismod bibe dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
-                <div class="d-flex home-slider__buttons" >
-                  <a href="" class="btn btn__yellow">ZOBRAZIŤ PONUKU</a>
-                  <a href="" class="btn btn__transparent">ZÁJAZ NA MIERU</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
 
       </div>
@@ -217,53 +188,55 @@ get_header();
       <section class="last-blog">
         <div class="container">
           <div class="heading  ">
+            <?php $blogNews = get_field('najnovsie_z_blogu'); ?>
             <div>
-              <span class="h3 yellow">Lorem ipsum dolor</span>
-              <h2>Najnovšie z blogu</h2>
+              <span class="h3 yellow"><?php echo $blogNews['zlty_nadpis']; ?> </span>
+              <h2><?php echo $blogNews['biely_nadpis']; ?>  </h2>
             </div>
-            <a href="" class="btn btn__transparent btn__transparent--black">
+            <a href="<?php bloginfo('template_url');  ?>/blog" class="btn btn__transparent btn__transparent--black">
               ZOBRAZIŤ BLOG
             </a>
           </div>
 
+          <?php 
+
+            $args = array( 
+			      	'post_type'   => 'post',
+              'posts_per_page' => '2',
+              'orderby'=> 'post_date', 
+            ); 
+
+             query_posts( $args );;
+
+
+            // var_dump(get_posts());
+          ?>
+
+
           <div class="row">
-            <a href=""  class="col-md-6 item-blog"> 
+            <?php while (  have_posts() ) :  the_post(); ?>
+               
+
+              <a href="<?php echo the_permalink() ;?>"  class="col-md-6 item-blog"> 
               <div class="row">
                 <div class="col-md-4">
-                  <img src="/assets/images/blog_01.png" alt="">
+                  <?php echo get_the_post_thumbnail(); ?> 
                 </div>
                 <div class="col-md-8">
-                  <h4>Piesočné ryby</h4>
-                  <p>Jedna z týchto úžasných vecí, ktoré sú v tejto prírode stále živé a stále si nachádzajú spôsob, ako sa časom aktualizovať a vyvíjať, Nomádi ju poznajú ako Shershmala, zatiaľ čo iní ľudia ju nazývajú Piesočná ryba.</p>
-                  <span>12, 12, 2022</span>
+                  <h4><?php the_title(); ?></h4>
+                  <p>
+                    Jedna z týchto úžasných vecí, ktoré sú v tejto prírode stále živé a stále si nachádzajú spôsob, ako sa časom aktualizovať a vyvíjať, Nomádi ju poznajú ako Shershmala, zatiaľ čo iní ľudia ju nazývajú Piesočná ryba.
+                  </p>
+                  <span><?php echo get_the_date('d. m. Y') ?></span>
                 </div>
               </div>
-            </a> 
-            <a href=""  class="col-md-6 item-blog"> 
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="/assets/images/blog_01.png" alt="">
-                </div>
-                <div class="col-md-8">
-                  <h4>Piesočné ryby</h4>
-                  <p>Jedna z týchto úžasných vecí, ktoré sú v tejto prírode stále živé a stále si nachádzajú spôsob, ako sa časom aktualizovať a vyvíjať, Nomádi ju poznajú ako Shershmala, zatiaľ čo iní ľudia ju nazývajú Piesočná ryba.</p>
-                  <span>12, 12, 2022</span>
-                </div>
-              </div>
-            </a> 
+            </a>     
+
+            <?php endwhile; ?>
+                                                                
+             
             
-            <a href=""  class="col-md-6 item-blog"> 
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="/assets/images/blog_01.png" alt="">
-                </div>
-                <div class="col-md-8">
-                  <h4>Piesočné ryby</h4>
-                  <p>Jedna z týchto úžasných vecí, ktoré sú v tejto prírode stále živé a stále si nachádzajú spôsob, ako sa časom aktualizovať a vyvíjať, Nomádi ju poznajú ako Shershmala, zatiaľ čo iní ľudia ju nazývajú Piesočná ryba.</p>
-                  <span>12, 12, 2022</span>
-                </div>
-              </div>
-            </a> 
+             
           </div> 
         </div> 
       </section>

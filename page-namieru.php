@@ -24,13 +24,11 @@ get_header();
         <div class="col-md-6 item-heading__wrap">
           <div class="item-heading__content yellow">
             <h1>Zájazd na mieru</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
-            </p>
+            <?php echo the_content(); ?> 
           </div>
         </div>
         <div class="col-md-6 item-heading__img">
-          <img src="/assets/images/ref_04.png" alt="">
+          <?php echo get_the_post_thumbnail() ?>
         </div>
       </div>
     </div>
@@ -39,53 +37,23 @@ get_header();
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-lg-25 include">
+        <?php $advantages = get_field('advantages') ?>
+        
+        <?php foreach ($advantages as $key => $value): ?>
+          <div class="col-md-6 col-lg-25 include">
           <span class="include__check"><i class="fa-solid fa-check"></i></span>
-          <p><strong>Lorem ipsum dolor sit amet</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+          <p><strong><?php echo $value['vyhoda_nadpis'] ?></strong></p>
+          <p><?php echo $value['vyhoda'] ?></p>
         </div>
-        <div class="col-md-6 col-lg-25 include">
-          <span class="include__check"><i class="fa-solid fa-check"></i></span>
-          <p><strong>Lorem ipsum dolor sit amet</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="col-md-6 col-lg-25 include">
-          <span class="include__check"><i class="fa-solid fa-check"></i></span>
-          <p><strong>Lorem ipsum dolor sit amet</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="col-md-6 col-lg-25 include">
-          <span class="include__check"><i class="fa-solid fa-check"></i></span>
-          <p><strong>Lorem ipsum dolor sit amet</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="col-md-6 col-lg-25 include">
-          <span class="include__check"><i class="fa-solid fa-check"></i></span>
-          <p><strong>Lorem ipsum dolor sit amet</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
+        <?php endforeach; ?>
+          
       </div>
     </div>
   </section>
     
   
-  <section class="for-you">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <img src="/assets/images/ref_04.png" alt="">
-        </div>
-        <div class="col-md-6 d-flex align-items-center">
-          <div class="for-you__content">
-            <h3 class="yellow">Vytvorené pre vás</h3>
-            <h2>Chcete dovolenku na mieru?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-            <a href="" class="btn btn__blue">MÁM ZÁUJEM</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+   
   <br>
   <br>
 

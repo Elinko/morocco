@@ -1,22 +1,14 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package morocco
  */
-  /*
-	 Template Name: Inspiration
- */
+
 get_header();
 ?>
-
 <main class="page blog">
       <div class="container">
         <div class="item-heading"> 
@@ -24,13 +16,16 @@ get_header();
             <div class="col-md-6 item-heading__wrap">
               <div class="item-heading__content">
                 <h1> 
-					<?php echo get_the_title(); ?>
-				</h1>
-				<?php echo get_the_content() ?>
+                  <?php echo get_the_title(13); ?>
+                </h1>
+                <?php 
+                the_archive_title( '<h3 class="page-title">', '</h3>' );
+                ?>    
+                <?php echo  apply_filters('the_content', get_post_field('post_content', 13)); ?>
               </div>
             </div>
             <div class="col-md-6 item-heading__img">
-				<?php echo get_the_post_thumbnail() ?>
+              <img src="<?= get_field('obrazok', 13); ?>	" alt="">
             </div>
           </div>
         </div>
@@ -39,27 +34,24 @@ get_header();
       <section class="categories">
         <div class="container">
           <div class="categories__wrap">
-			<a href="http://localhost/morocco/inspiration_category/adrenalin/" class="btn-small" style="background: #CB5C93">
-				Adrenalín              
-			</a>
-			<?php 
+            <?php 
 
-				$args = array(
-					'taxonomy' => 'Inspiration_category',
-					'orderby' => 'name',
-					'order'   => 'ASC'
-				);
+              $args = array(
+                'taxonomy' => 'Inspiration_category',
+                'orderby' => 'name',
+                'order'   => 'ASC'
+              );
 
-				$cats = get_categories($args);
+              $cats = get_categories($args);
 
-				foreach($cats as $cat) {
-			?>
-				<a href="<?php echo get_category_link( $cat->term_id ) ?>" class="btn-small" style="background: <?php echo $cat->description; ?>">
-				<?php echo $cat->name; ?>
-				</a>
-			<?php	
-				}
-			?>
+              foreach($cats as $cat) {
+            ?>
+              <a href="<?php echo get_category_link( $cat->term_id ) ?>" class="btn-small" style="background: <?php echo $cat->description; ?>">
+              <?php echo $cat->name; ?>
+              </a>
+            <?php	
+              }
+            ?>
 
 			
             <!-- <a href="" class="btn-small btn-small__red">Adrenalín</a>
@@ -77,45 +69,31 @@ get_header();
           <div class="row">
 
           <?php 
-            $args = array( 
-			      	'post_type'   => 'inspiracie',
-            );
-            $my_posts = get_posts( $args );
-            
-            if( ! empty( $my_posts ) ){
-              $output = '<ul>';
-              foreach ( $my_posts as $p ){
-                $output .= '<li><a href="' . get_permalink( $p->ID ) . '">' 
-                . $p->post_title . '</a></li>';
-              }
-              $output .= '</ul>';
-            }
+ 
           ?>
-
-          <?php if( ! empty( $my_posts ) ): ?>
-            <?php foreach ( $my_posts as $p ): ?> 
+ 
+            <?php while ( have_posts() ): ?>
+				<?php the_post(); ?> 
               <?php  
                   // var_dump($p);
                 ?>
               <div class="col-md-6 col-lg-4 col-12">
-                <a href="<?php echo get_permalink( $p->ID ) ?>" class="item-inspiration">
-                <?php echo get_the_post_thumbnail( $p->ID)  ?>
+                <a href="<?php echo get_permalink( get_the_ID() ) ?>" class="item-inspiration">
+                <?php echo get_the_post_thumbnail( get_the_ID())  ?>
                   <!-- <img src="/assets/images/ref_01.png" alt=""> -->
                   <div class="item-inspiration__content">
                     <h3 class="h4">
-                      <?php echo $p->post_title ?>
+                      <?php echo the_title() ?>
                     </h3>
                     <div class="d-flex justify-content-between align-items-center">
                       <span>
                         <?php 
-                          $mydate = new DateTime($p->post_date)  ; 
-                          $mydate = date_format($mydate, 'd. m. Y');
-
-                          echo $mydate;
+                           
+                          echo get_the_date('d. m. Y');
                         ?>
 
                       </span>
-                      <?php $mycat = get_the_terms($p->ID, 'Inspiration_category'); ?>
+                      <?php $mycat =get_the_category(get_the_ID()); ?>
                       <?php foreach($mycat as $postCat): ?>
                         <span class="badge" style="background: <?php echo $postCat->description; ?>">
                           <?php echo $postCat->name; ?>
@@ -125,8 +103,7 @@ get_header();
                   </div>
                 </a>
               </div> 
-            <?php endforeach; ?>
-          <?php endif; ?>
+            <?php endwhile; ?> 
 
              
           </div>
@@ -160,5 +137,4 @@ get_header();
     </main>
 
 <?php
-
 get_footer();

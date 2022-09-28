@@ -28,7 +28,7 @@ get_header();
               </div>
             </div>
             <div class="col-md-6 item-heading__img">
-              <img src="<?php bloginfo('template_url');  ?>/assets/images/ref_04.png" alt="">
+               <?php echo get_the_post_thumbnail() ?>
             </div>
           </div>
         </div>
@@ -42,16 +42,15 @@ get_header();
                 <i class="fa-solid fa-address-card"></i> 
               </div>
               <h4>Kontakt</h4>
-              <p><a href="tel:0907 654 321" class="link">0907 654 321</a></p>
-              <p><a href="tel:0907 654 321" class="link">0907 654 321</a></p>
+              <?php echo get_field('kontakt') ?> 
             </div>
             <div class="col-md-6 col-lg-3 contact__info">
               <div class="icon">
                 <i class="fa-solid fa-clock"></i>
               </div>
               <h4>Otváracie hodiny</h4> 
-              <p>Pon – Štv: <strong>08:00 – 15:00</strong></p> 
-              <p>Pon – Štv: <strong>08:00 – 15:00</strong></p> 
+              <?php echo get_field('otvaracie_hodiny') ?> 
+
             </div>
             <div class="col-md-6 col-lg-3 contact__info">
               <div class="icon">
@@ -60,9 +59,8 @@ get_header();
               <h4>
                 <strong>Adresa</strong>
               </h4>
-              <p>Morocco Dream Tour s.r.o</p> 
-              <p>Morocco Dream Tour s.r.o</p> 
-              <p>Morocco Dream Tour s.r.o</p> 
+              <?php echo get_field('adresa') ?> 
+              
             </div>
             <div class="col-md-6 col-lg-3 contact__info">
               <div class="icon">
@@ -71,10 +69,8 @@ get_header();
               <h4>
                 <strong>Fakturačné údaje</strong>
               </h4>
-              <p>IČO: <strong>45654321</strong></p> 
-              <p>IČO: <strong>45654321</strong></p> 
-              <p>IČO: <strong>45654321</strong></p> 
-              <p>IČO: <strong>45654321</strong></p> 
+              <?php echo get_field('fakturacne_udaje') ?> 
+              
             </div>
           </div>
         </div>

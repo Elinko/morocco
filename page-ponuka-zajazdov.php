@@ -23,12 +23,14 @@ get_header();
           <div class="row">
             <div class="col-md-6 item-heading__wrap">
               <div class="item-heading__content">
-                <h1>Ponuka zájazdov</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</p>
+                <h1><?php echo get_the_title(); ?></h1>
+                <?php echo get_the_content() ?>
+
               </div>
             </div>
             <div class="col-md-6 item-heading__img">
-              <img src="/assets/images/ref_04.png" alt="">
+            <?php echo get_the_post_thumbnail() ?>
+
             </div>
           </div>
         </div>
