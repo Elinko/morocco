@@ -49,6 +49,15 @@
             position: relative;
             z-index: 0;
         }
+
+        .slick-track {
+            display: flex!important;
+
+            .slick-slide  {
+                height: inherit!important;
+                object-fit: cover;
+            }
+        }
     }
 
     &__info {

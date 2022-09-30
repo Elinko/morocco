@@ -357,6 +357,28 @@ function create_posttypinspiration() {
   // Hooking up our function to theme setup
   add_action( 'init', 'create_posttypezajazd' );
 
+  function my_taxonomies_zajazdy() {
+	$labels = array(
+	  'name'              => _x( 'Kategorie', 'taxonomy general name' ),
+	  'singular_name'     => _x( 'Kategorie', 'taxonomy singular name' ),
+	  'search_items'      => __( 'Search Zájazdy Categories' ),
+	  'all_items'         => __( 'All Zájazdy Categories' ),
+	  'parent_item'       => __( 'Parent Zájazdy Category' ),
+	  'parent_item_colon' => __( 'Parent Zájazdy Category:' ),
+	  'edit_item'         => __( 'Edit Zájazdy Category' ), 
+	  'update_item'       => __( 'Update Zájazdy Category' ),
+	  'add_new_item'      => __( 'Add New Zájazdy Category' ),
+	  'new_item_name'     => __( 'New Zájazdy Category' ),
+	  'menu_name'         => __( 'Kategorie' ),
+	);
+	$args = array(
+	  'labels' => $labels,
+	  'hierarchical' => true,
+	);
+	register_taxonomy( 'zajazdy_category', 'zajazdy', $args );
+  }
+  add_action( 'init', 'my_taxonomies_zajazdy', 0 );
+
 
 
 // Walker na zobrazovanie menu ... toto nemenit, spravene tak aby sa menu zobrazovali podla bootstrapu

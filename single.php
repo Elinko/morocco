@@ -55,16 +55,30 @@ get_header();
         <div class="container">
           <div class="d-flex justify-content-between slick-slider" >
             <?php  $previous = get_previous_post() ;
+            // var_dump($previous);
               $next = get_next_post();
             ?>
-            <a href="<?php echo $previous->guid; ?>" class="d-flex align-items-center"><span class="slick-arroww slick-prev"></span><strong>Predošlí článok</strong>  </a>  
-            <a href="<?php echo $next->guid; ?>    " class="d-flex align-items-center"><strong>Nasledujúci článok</strong> <span class="slick-arroww slick-next"></span></a> 
+            <a href="<?php echo get_the_permalink($previous->ID) ?>" class="d-flex align-items-center"><span class="slick-arroww slick-prev"></span><strong>Predošlí článok</strong>  </a>  
+            <a href="<?php echo get_the_permalink($next->ID) ?>    " class="d-flex align-items-center"><strong>Nasledujúci článok</strong> <span class="slick-arroww slick-next"></span></a> 
           </div>
         </div>
       </section>
       <section class="advise">
         <div class="container">
           <div class="heading ">
+          <?php 
+            $args = array( 
+              'post_type'   => 'zajazdy',
+              'posts_per_page' => '3',
+              'orderby'=> 'post_date', 
+            ); 
+
+            query_posts( $args );;
+
+
+            // var_dump(get_posts());
+            ?> 
+
             <div>
               <span class="h3 yellow">Vreľo</span>
               <h2>Odporúčame</h2>
@@ -74,63 +88,38 @@ get_header();
             </a>
           </div>
           <div class="row">
+
+          <?php while(  have_posts() ) :   ?>
+            <?php the_post(); ?>
             <div class="col-md-6 col-lg-4 col-12">
               <div class="item-trip">
                 <div class="item-trip__head d-flex justify-content-between align-items-center">
                   <h3 class="h4">
-                    CHEGAGA DUNES
+                    <?php the_title() ?>
                   </h3>
-                  <span class="badge badge__green">
-                    Relax
-                  </span>
+                  <?php $mycat = get_the_terms(get_the_ID(), 'zajazdy_category') ?>
+                  <?php foreach($mycat as $postCat): ?>
+                    <span class="badge" style="background: <?php echo $postCat->description; ?>">
+                      <?php echo $postCat->name; ?>
+                    </span>
+                  <?php endforeach; ?>
                 </div>
-                <p>M'Hamid El Ghizlane</p>
+                <?php if($location = get_field('oblast')): ?>
+                <p><?php echo $location ; ?></p>
+                <?php endif; ?>
+                <?php $price = get_field('terminy'); 
+                  // var_dump($price[0]);
+                ?>
                 <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
+                  <h3>od&nbsp;<?php echo $price[0]['cena'] ;?>&nbsp;€</h3>
                   <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <img src="/assets/images/ref_01.png" alt="">
+                <?php echo get_the_post_thumbnail(); ?>
   
               </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    CHEGAGA DUNES
-                  </h3>
-                  <span class="badge badge__blue">
-                    Relax
-                  </span>
-                </div>
-                <p>M'Hamid El Ghizlane</p>
-                <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <img src="/assets/images/ref_01.png" alt="">
-  
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    CHEGAGA DUNES
-                  </h3>
-                  <span class="badge badge__red">
-                    Relax
-                  </span>
-                </div>
-                <p>M'Hamid El Ghizlane</p>
-                <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <img src="/assets/images/ref_01.png" alt="">
-  
-              </div>
-            </div>
+          <?php endwhile; ?>
+
           </div>
         </div>
       </section>

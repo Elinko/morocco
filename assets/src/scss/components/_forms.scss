@@ -1,0 +1,53 @@
+.wpcf7-form {
+    p {
+        
+        margin-bottom: 12px!important;
+    }
+    label {
+        background: #F5F5F5 0% 0% no-repeat padding-box;
+        border-radius: 69px;
+        border: 1px solid #F5F5F5;
+        padding: 16px 20px;
+        font-size: 14px;
+        color: #353C58; 
+        width: 100%;
+        max-width: 450px;
+
+        br {
+            display: none;
+        }
+
+
+        &:focus, &:active, &:focus-within {
+            border: 1px solid #1C3099;
+        }
+
+        input, textarea {
+            background: none;
+            border: none;
+            outline: none!important;
+                padding: 0 8px;
+                font-weight: bold;;
+        }
+
+        &.comment {
+            border-radius: 20px;   
+            display: flex;
+
+      
+        }
+    }
+
+    .wpcf7-acceptance {
+        label {
+            background: none;
+            padding: 0;
+            border: none!important;
+
+            input {
+                height: 16px;
+                width: 16px;
+            }
+        }
+    }
+}

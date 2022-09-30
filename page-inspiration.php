@@ -39,9 +39,6 @@ get_header();
       <section class="categories">
         <div class="container">
           <div class="categories__wrap">
-			<a href="http://localhost/morocco/inspiration_category/adrenalin/" class="btn-small" style="background: #CB5C93">
-				Adrenalín              
-			</a>
 			<?php 
 
 				$args = array(
@@ -51,6 +48,7 @@ get_header();
 				);
 
 				$cats = get_categories($args);
+        // var_dump($cats);
 
 				foreach($cats as $cat) {
 			?>
@@ -136,23 +134,8 @@ get_header();
         </div>
 	</section>
 
-	<section class="for-you">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-			<img src="/assets/images/ref_04.png" alt="">
-			</div>
-			<div class="col-md-6 d-flex align-items-center">
-			<div class="for-you__content">
-				<h3 class="yellow">Vytvorené pre vás</h3>
-				<h2>Chcete dovolenku na mieru?</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-				<a href="" class="btn btn__blue">MÁM ZÁUJEM</a>
-			</div>
-			</div>
-		</div>
-		</div>
-	</section>
+  <?php include('inc/trip-for-you.php') ?>
+
       <br>
       <br>
 

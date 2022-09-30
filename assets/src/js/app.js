@@ -32,9 +32,9 @@ $(document).ready(function() {
         infinite: true,
         arrows: true,
         autoplay: true,
-        speed: 3000,
+        speed: 1000,
         slidesToShow: 1,
-        adaptiveHeight: true
+        adaptiveHeight: false
     });
 
 

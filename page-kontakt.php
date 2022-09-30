@@ -82,9 +82,25 @@ get_header();
             <div class="col-md-6">
               <h2>Napíšte nám</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+              <?php 
+                echo do_shortcode('[contact-form-7 id="191" title="Kontakt"]') 
+              ?> 
+
+               
+
             </div>
             <div class="col-md-6 write-us__map">
-              <img src="/assets/images/mapa.png" alt="">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1549.5315617441188!2d17.12336982426233!3d48.128466760040915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c891020f49143%3A0x21b64d20be176a8!2s%C5%A0ustekova%202689%2F5%2C%20851%2004%20Petr%C5%BEalka!5e0!3m2!1ssk!2ssk!4v1664545398047!5m2!1ssk!2ssk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- <iframe
+              width="600"
+              height="450"
+              style="border:0"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBq-L9Jwr8cRCUA8AO3nvoLwlIci2zwSqk
+                &q=Space+Needle,Seattle+WA">
+            </iframe> -->
             </div>
           </div>
         </div>
@@ -94,5 +110,7 @@ get_header();
 
     </main>
 <?php
+
+ 
 
 get_footer();

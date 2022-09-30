@@ -35,103 +35,66 @@ get_header();
           </div>
         </div>
       </div>
+
+      <?php 
+
+        $args = array( 
+          'post_type'   => 'zajazdy',
+          'posts_per_page' => '-1',
+          'orderby'=> 'post_date', 
+        ); 
+
+        query_posts( $args );;
+
+
+        // var_dump(get_posts());
+      ?>
+
        
       <section class="advise">
         <div class="container">
           <div class="row">
+          <?php while (  have_posts() ) :  the_post(); ?> 
             <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
+              <a href="<?php the_permalink(); ?>" class="item-trip" href="<?php echo the_permalink(); ?>">
                 <div class="item-trip__head d-flex justify-content-between align-items-center">
                   <h3 class="h4">
-                    CHEGAGA DUNES
+                  <?php echo the_title(); ?>
                   </h3>
-                  <span class="badge badge__green">
-                    Relax
-                  </span>
+                  <?php $mycat = get_the_terms(get_the_ID(), 'zajazdy_category') ?>
+                  <?php foreach($mycat as $postCat): ?>
+                    <?php 
+                    // var_dump($postCat ) ;
+                    ?>
+                        <span class="badge" style="background: <?php echo $postCat->description; ?>">
+                          <?php echo $postCat->name; ?>
+                        </span>
+                  <?php endforeach; ?>
+                
                 </div>
-                <p>M'Hamid El Ghizlane</p>
+                <?php if($location = get_field('oblast')): ?>
+                <p><?php echo $location ; ?></p>
+                <?php endif; ?>
+                <?php $price = get_field('terminy'); 
+                  // var_dump($price[0]);
+                ?>
                 <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                  <h3>od&nbsp;<?php echo $price[0]['cena'] ;?>&nbsp;€</h3>
+                  <div class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></div>
                 </div>
-                <img src="/assets/images/ref_01.png" alt="">
-              </div>
-              <div class="item-trip">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    CHEGAGA DUNES
-                  </h3>
-                  <span class="badge badge__green">
-                    Relax
-                  </span>
-                </div>
-                <p>M'Hamid El Ghizlane</p>
-                <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <img src="/assets/images/ref_01.png" alt="">
-              </div>
+                <?php echo get_the_post_thumbnail(); ?> 
+              </a>
             </div>
-            <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    CHEGAGA DUNES
-                  </h3>
-                  <span class="badge badge__blue">
-                    Relax
-                  </span>
-                </div>
-                <p>M'Hamid El Ghizlane</p>
-                <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <img src="/assets/images/ref_01.png" alt="">
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    CHEGAGA DUNES
-                  </h3>
-                  <span class="badge badge__red">
-                    Relax
-                  </span>
-                </div>
-                <p>M'Hamid El Ghizlane</p>
-                <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <img src="/assets/images/ref_01.png" alt="">
-              </div>
-            </div>
+          <?php endwhile; ?>
+
           </div>
           <div class="text-center more-trip">
             <a href="" class="btn btn__blue">ZOBRAZIŤ ĎALŠIE</a>
           </div>
         </div>
       </section>
-      <section class="for-you">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="/assets/images/ref_04.png" alt="">
-            </div>
-            <div class="col-md-6 d-flex align-items-center">
-              <div class="for-you__content">
-                <h3 class="yellow">Vytvorené pre vás</h3>
-                <h2>Chcete dovolenku na mieru?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-                <a href="" class="btn btn__blue">MÁM ZÁUJEM</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <?php include('inc/trip-for-you.php') ?>
+
       <br>
       <br>
 
