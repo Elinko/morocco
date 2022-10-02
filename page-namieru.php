@@ -51,6 +51,19 @@ get_header();
       </div>
     </div>
   </section>
+  <section>
+    <div class="container">
+      <h2>Kontaktujte nás</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <?php 
+            echo do_shortcode('[contact-form-7 id="206" title="Zajazd na mieru"]') 
+          ?>
+
+        </div>
+      </div>
+    </div>
+  </section>
     
   
    

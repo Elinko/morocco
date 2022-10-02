@@ -66,7 +66,7 @@ get_header();
           <?php while(  have_posts() ) :   ?>
             <?php the_post(); ?>
             <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
+              <a class="item-trip" href="<?php echo get_the_permalink() ?>">
                 <div class="item-trip__head d-flex justify-content-between align-items-center">
                   <h3 class="h4">
                     <?php the_title() ?>
@@ -86,11 +86,11 @@ get_header();
                 ?>
                 <div class="d-flex justify-content-between price">
                   <h3>od&nbsp;<?php echo $price[0]['cena'] ;?>&nbsp;€</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+                  <span class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></span>
                 </div>
                 <?php echo get_the_post_thumbnail(); ?>
   
-              </div>
+                </a>
             </div>
           <?php endwhile; ?>
 

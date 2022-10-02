@@ -8,13 +8,18 @@
  */
 
 get_header();
+
+$thumbnail = get_the_post_thumbnail();
+$title =  get_the_title();
+$desc = get_field('kratky_popis');
 ?>
+                 
 
 <main class="page trip">
       <section >
         <div class="container">
-          <h1>
-            <?php echo the_title(); ?>
+          <h1> 
+            <?php echo $title  ?>
           </h1> 
           <div class="row">
             <div class="col-md-5">
@@ -59,7 +64,7 @@ get_header();
                   <?php endforeach; ?>
                  
               </div>
-              <?php echo get_field('kratky_popis'); ?> 
+              <?php echo $desc; ?> 
 
             </div>
             <div class="col-md-7">
@@ -108,10 +113,12 @@ get_header();
       </section>
       <section>
         <div class="container">
+          <!-- Button trigger modal -->
+ 
           <h2>Termíny</h2>
           <div class="schhedule">
             <?php $schedule = get_field('terminy'); ?>
-            <?php foreach($schedule as $termin): ?>
+            <?php foreach($schedule as $key => $termin): ?>
               <div class="schhedule__item">
                 <div class="schhedule__item--col">
                   <strong><?php echo $termin['datum']['od']; ?> - <?php echo $termin['datum']['do']; ?> </strong>
@@ -127,14 +134,50 @@ get_header();
                   <h3><?php echo $termin['cena']; ?>&nbsp;€</h3>
                 </div>
                 <div class="schhedule__item--col totrip">
-                  <a href="" class="link-arrow">Mám záujem <i class="fa-solid fa-arrow-right"></i></a>
+                  <a href="" class="link-arrow" data-toggle="modal" data-target="#modal<?php echo $key ?>"  data-termin="<?php echo $termin['datum']['od']; ?> - <?php echo $termin['datum']['do']; ?>" data-title="<?php echo $title; ?>" data-url="<?php echo get_the_permalink(); ?>">Mám záujem <i class="fa-solid fa-arrow-right"></i></a> 
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="modal<?php echo $key ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header"> 
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <i class="fa-solid fa-xmark"></i>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <h2>Záujem o zájazd</h2>
+                          <div class="modal__head">
+                            <?php echo $thumbnail; ?>
+                            <div>
+                              <h3 class="h4 yellow">
+                              <?php echo $termin['datum']['od']; ?> - <?php echo $termin['datum']['do']; ?>
+                              </h3> 
+                              <h3 class="h4">
+                                <?php echo $title; ?>
+                              </h3>
+                            </div>
+
+                          </div>
+                          <p><?php echo $desc; ?></p>
+                          <br>
+                          <?php 
+                            echo do_shortcode('[contact-form-7 id="195" title="Zájazd"]') 
+                          ?> 
+                          
+                        </div>
+                         
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             <?php endforeach; ?>
           </div>
         </div>
       </section>
-       
+
+ 
        
       <?php include('inc/trip-for-you.php') ?>
       
