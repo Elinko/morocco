@@ -23,8 +23,8 @@ get_header();
           <div class="row">
             <div class="col-md-6 item-heading__wrap">
               <div class="item-heading__content">
-                <h1>Kontakt</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</p>
+                <h1><?php echo the_title() ?></h1>
+                <?php echo the_content() ?>     
               </div>
             </div>
             <div class="col-md-6 item-heading__img">
@@ -41,14 +41,14 @@ get_header();
               <div class="icon">
                 <i class="fa-solid fa-address-card"></i> 
               </div>
-              <h4>Kontakt</h4>
+              <h4><?php pll_e('Kontakt'); ?> </h4>
               <?php echo get_field('kontakt') ?> 
             </div>
             <div class="col-md-6 col-lg-3 contact__info">
               <div class="icon">
                 <i class="fa-solid fa-clock"></i>
               </div>
-              <h4>Otváracie hodiny</h4> 
+              <h4><?php pll_e('Otváracie hodiny'); ?> </h4> 
               <?php echo get_field('otvaracie_hodiny') ?> 
 
             </div>
@@ -57,7 +57,7 @@ get_header();
                 <i class="fa-solid fa-location-arrow"></i>
               </div>
               <h4>
-                <strong>Adresa</strong>
+                <strong><?php pll_e('Adresa'); ?> </strong>
               </h4>
               <?php echo get_field('adresa') ?> 
               
@@ -67,7 +67,7 @@ get_header();
                 <i class="fa-solid fa-list"></i>
               </div>
               <h4>
-                <strong>Fakturačné údaje</strong>
+                <strong><?php pll_e('Fakturačné údaje'); ?> </strong>
               </h4>
               <?php echo get_field('fakturacne_udaje') ?> 
               
@@ -80,10 +80,16 @@ get_header();
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h2>Napíšte nám</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
+              <h2><?php pll_e('Napíšte nám'); ?></h2>
+
+               <?php 
+                $writUs = get_field('napiste_nam_text', pll__('16'))
+               ?>
+                <p>
+                  <?php echo $writUs; ?>
+                </p>
               <?php 
-                echo do_shortcode('[contact-form-7 id="191" title="Kontakt"]') 
+                echo do_shortcode(pll__('[contact-form-7 id="191" title="Kontakt"]')) 
               ?> 
 
                

@@ -25,7 +25,11 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   
 
-	<?php wp_head(); ?>
+	<?php wp_head(); 
+    $lang = get_locale();
+    // sk_SK
+    // en_GB
+  ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -45,7 +49,7 @@
           </button>
 
 		  <?php  
-	 
+
 			if( has_nav_menu( 'menu-1' ))
 			wp_nav_menu( array(
 			'theme_location' => 'menu-1',
@@ -68,11 +72,17 @@
               </a>
               <div class="dropdown">
                 <button class="btn btn__white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Slovensky
+                <?php 
+                  if($lang == 'sk_SK') {
+                    pll_e('Slovensky');
+                  } else {
+                    pll_e('Anglicky');
+                  }
+                ?> 
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Slovensky</a>
-                  <a class="dropdown-item" href="#">Anglicky</a> 
+                  <a class="dropdown-item" href="/"><?php pll_e('Slovensky'); ?> </a>
+                  <a class="dropdown-item" href="/en"><?php pll_e('Anglicky'); ?> </a> 
                 </div>
               </div>
             </div>

@@ -55,78 +55,8 @@ get_header();
           </div>
         </div>
       </section>
-      <section class="advise">
-        <div class="container">
-          <div class="heading ">
-            <div>
-              <span class="h3 yellow">Vreľo</span>
-              <h2>Odporúčame</h2>
-            </div>
-            <a href="" class="btn btn__transparent btn__transparent--black">
-              ZOBRAZIŤ VŠETKY PONUKY
-            </a>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    CHEGAGA DUNES
-                  </h3>
-                  <span class="badge badge__green">
-                    Relax
-                  </span>
-                </div>
-                <p>M'Hamid El Ghizlane</p>
-                <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <img src="/assets/images/ref_01.png" alt="">
-  
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    CHEGAGA DUNES
-                  </h3>
-                  <span class="badge badge__blue">
-                    Relax
-                  </span>
-                </div>
-                <p>M'Hamid El Ghizlane</p>
-                <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <img src="/assets/images/ref_01.png" alt="">
-  
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-12">
-              <div class="item-trip">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    CHEGAGA DUNES
-                  </h3>
-                  <span class="badge badge__red">
-                    Relax
-                  </span>
-                </div>
-                <p>M'Hamid El Ghizlane</p>
-                <div class="d-flex justify-content-between price">
-                  <h3>od 1.200 €</h3>
-                  <a href="" class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <img src="/assets/images/ref_01.png" alt="">
-  
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <?php include('inc/advise.php') ?>
+       
        
        
        

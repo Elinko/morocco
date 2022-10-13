@@ -129,7 +129,7 @@ get_header();
              
           </div>
           <div class="text-center more-trip">
-            <a href="" class="btn btn__blue">ZOBRAZIŤ ĎALŠIE</a>
+            <a href="" class="btn btn__blue"><?php pll_e('ZOBRAZIŤ ĎALŠIE'); ?> </a>
           </div>
         </div>
       </section>

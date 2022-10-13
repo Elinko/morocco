@@ -23,7 +23,7 @@ get_header();
       <div class="row">
         <div class="col-md-6 item-heading__wrap">
           <div class="item-heading__content yellow">
-            <h1>Zájazd na mieru</h1>
+            <h1> <?php echo the_title(); ?> </h1>
             <?php echo the_content(); ?> 
           </div>
         </div>
@@ -53,11 +53,12 @@ get_header();
   </section>
   <section>
     <div class="container">
-      <h2>Kontaktujte nás</h2>
+      <h2><?php pll_e('Kontaktujte nás'); ?></h2>
       <div class="row">
         <div class="col-md-8">
-          <?php 
-            echo do_shortcode('[contact-form-7 id="206" title="Zajazd na mieru"]') 
+          <?php  
+            echo do_shortcode(pll__('[contact-form-7 id="206" title="Zajazd na mieru"]')) 
+          
           ?>
 
         </div>

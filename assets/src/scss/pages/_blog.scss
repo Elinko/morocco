@@ -41,8 +41,9 @@
     }
 
     &__slider {
+        max-height: 350px;
         img {
-            border-radius: 20px;
+            border-radius: 20px; 
         }
 
         .slick-list {
@@ -54,7 +55,8 @@
             display: flex!important;
 
             .slick-slide  {
-                height: inherit!important;
+                height: 100%!important;
+                max-height: 350px;
                 object-fit: cover;
             }
         }

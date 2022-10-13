@@ -79,8 +79,8 @@ get_header();
                   // var_dump($price[0]);
                 ?>
                 <div class="d-flex justify-content-between price">
-                  <h3>od&nbsp;<?php echo $price[0]['cena'] ;?>&nbsp;€</h3>
-                  <div class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></div>
+                  <h3><?php pll_e('od'); ?>&nbsp;<?php echo $price[0]['cena'] ;?>&nbsp;€</h3>
+                  <div class="link-arrow"><?php pll_e('Zobraziť viac'); ?>&nbsp;<i class="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <?php echo get_the_post_thumbnail(); ?> 
               </a>
@@ -89,7 +89,7 @@ get_header();
 
           </div>
           <div class="text-center more-trip">
-            <a href="" class="btn btn__blue">ZOBRAZIŤ ĎALŠIE</a>
+            <a href="" class="btn btn__blue"><?php pll_e('ZOBRAZIŤ ĎALŠIE'); ?> </a>
           </div>
         </div>
       </section>

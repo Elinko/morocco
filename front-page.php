@@ -37,66 +37,9 @@ get_header();
         </div>
 
       </div>
-      <section class="advise">
-        <div class="container">
-          <div class="heading ">
-          <?php 
-            $args = array( 
-              'post_type'   => 'zajazdy',
-              'posts_per_page' => '3',
-              'orderby'=> 'post_date', 
-            ); 
+      
+      <?php include('inc/advise.php') ?>
 
-            query_posts( $args );;
-
-
-            // var_dump(get_posts());
-            ?> 
-
-            <div>
-              <span class="h3 yellow">Vreľo</span>
-              <h2>Odporúčame</h2>
-            </div>
-            <a href="" class="btn btn__transparent btn__transparent--black">
-              ZOBRAZIŤ VŠETKY PONUKY
-            </a>
-          </div>
-          <div class="row">
-
-          <?php while(  have_posts() ) :   ?>
-            <?php the_post(); ?>
-            <div class="col-md-6 col-lg-4 col-12">
-              <a class="item-trip" href="<?php echo get_the_permalink() ?>">
-                <div class="item-trip__head d-flex justify-content-between align-items-center">
-                  <h3 class="h4">
-                    <?php the_title() ?>
-                  </h3>
-                  <?php $mycat = get_the_terms(get_the_ID(), 'zajazdy_category') ?>
-                  <?php foreach($mycat as $postCat): ?>
-                    <span class="badge" style="background: <?php echo $postCat->description; ?>">
-                      <?php echo $postCat->name; ?>
-                    </span>
-                  <?php endforeach; ?>
-                </div>
-                <?php if($location = get_field('oblast')): ?>
-                <p><?php echo $location ; ?></p>
-                <?php endif; ?>
-                <?php $price = get_field('terminy'); 
-                  // var_dump($price[0]);
-                ?>
-                <div class="d-flex justify-content-between price">
-                  <h3>od&nbsp;<?php echo $price[0]['cena'] ;?>&nbsp;€</h3>
-                  <span class="link-arrow">Zobraziť viac&nbsp;<i class="fa-solid fa-arrow-right"></i></span>
-                </div>
-                <?php echo get_the_post_thumbnail(); ?>
-  
-                </a>
-            </div>
-          <?php endwhile; ?>
-
-          </div>
-        </div>
-      </section>
       <section class="why-us">
         <?php 
           $whyus = get_field('preco_prave_my'); 
@@ -135,11 +78,11 @@ get_header();
       <section class="tolding-about">
         <div class="container">
           <div class="text-center">
-            <h2>Povedali o nás</h2>
+            <h2><?php pll_e('Povedali o nás'); ?> </h2>
           </div>
           <div class="tolding-about__wrapper">
             <?php 
-              $tolding = get_field('povedali_o_nas', 16); 
+              $tolding = get_field('povedali_o_nas', pll__('16')); 
               ?>
               <?php 
             // var_dump($tolding);
@@ -166,13 +109,13 @@ get_header();
       <section class="last-blog">
         <div class="container">
           <div class="heading  ">
-            <?php $blogNews = get_field('najnovsie_z_blogu', 16); ?>
+            <?php $blogNews = get_field('najnovsie_z_blogu', pll__('16')); ?>
             <div>
               <span class="h3 yellow"><?php echo $blogNews['zlty_nadpis']; ?> </span>
               <h2><?php echo $blogNews['biely_nadpis']; ?>  </h2>
             </div>
             <a href="<?php bloginfo('template_url');  ?>/blog" class="btn btn__transparent btn__transparent--black">
-              ZOBRAZIŤ BLOG
+            <?php pll_e('ZOBRAZIŤ BLOG'); ?> 
             </a>
           </div>
 
@@ -222,15 +165,14 @@ get_header();
         <div class="container">
           <div class="health">
           <?php 
-              $health = get_field('zdravotne_informacie', 16); 
+              $health = get_field('zdravotne_informacie', pll__('16')); 
             ?>
-            <h2>Zdravotné informácie</h2>
-            <?= $value['text']  ?> 
+            <h2><?php pll_e('Zdravotné informácie'); ?> </h2>
+            <?= $health['text']  ?> 
       
-              <br>
-              <br>
+              <br> 
             <div class="text-right">
-              <a href="<?= $value['link']  ?>" class="link-arrow">Zobraziť viac <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+              <a href="<?= $health['link']  ?>" class="link-arrow"><?php pll_e('Zobraziť viac'); ?>  <i class="fa-sharp fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -244,19 +186,19 @@ get_header();
             </div>
             <div class="col-md-6">
               <h3 class="yellow">
-                Máte otázky?
+              <?php pll_e('Máte otázky?'); ?> 
               </h3>
               <h2>
-                Napíšte nám
+              <?php pll_e('Napíšte nám'); ?> 
               </h2>
               <p>
-                <?php echo get_field('napiste_nam_text', 16); ?>
+                <?php echo get_field('napiste_nam_text', pll__('16')); ?>
               </p>
                
               
 
               <?php 
-                echo do_shortcode('[contact-form-7 id="191" title="Kontakt"]') 
+                echo do_shortcode(pll__('[contact-form-7 id="191" title="Kontakt"]')) 
               ?> 
               
             </div>

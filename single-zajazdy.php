@@ -80,29 +80,33 @@ $desc = get_field('kratky_popis');
       </section>
       <section >
         <div class="container">
-          <h2>Informácie</h2>
+          <h2><?php pll_e('Informácie'); ?> </h2>
           <div class="row">
             <div class="col-md-6 ">
-              <?php $info = get_field('informacie') ?>
-              <div class="trip__info trip__info--green">
-                <h3 class="">V cene <i class="fa-solid fa-check"></i></h3>
-                <ul> 
+              <?php if($info['v_cene']): ?>
+                <?php $info = get_field('informacie') ?>
+                <div class="trip__info trip__info--green">
+                  <h3 class=""><?php pll_e('V cene'); ?> <i class="fa-solid fa-check"></i></h3>
+                  <ul> 
 
-                  <?php foreach( $info['v_cene'] as $item): ?>
-                    <li>- <?php echo $item['polozka'] ?></li>
-                  <?php endforeach; ?> 
-                </ul>
-              </div>
+                    <?php foreach( $info['v_cene'] as $item): ?>
+                      <li>- <?php echo $item['polozka'] ?></li>
+                    <?php endforeach; ?> 
+                  </ul>
+                </div>
+              <?php endif; ?>
             </div>
             <div class="col-md-6">
-              <div class="trip__info trip__info--red">
-                <h3 class="">V cene nie je zahrnuté <i class="fa-solid fa-xmark"></i></h3>
-                <ul>
-                  <?php foreach( $info['nie_je_v_cene'] as $item): ?>
-                      <li>- <?php echo $item['polozka'] ?></li>
-                    <?php endforeach; ?>    
-                </ul>
-              </div>
+              <?php if($info['nie_je_v_cene']): ?>
+                <div class="trip__info trip__info--red">
+                  <h3 class=""><?php pll_e('V cene nie je zahrnuté '); ?> <i class="fa-solid fa-xmark"></i></h3>
+                  <ul>
+                    <?php foreach( $info['nie_je_v_cene'] as $item): ?>
+                        <li>- <?php echo $item['polozka'] ?></li>
+                      <?php endforeach; ?>    
+                  </ul>
+                </div>
+              <?php endif; ?>
             </div>
           </div> 
           <div class=" trip__desc">
@@ -115,7 +119,7 @@ $desc = get_field('kratky_popis');
         <div class="container">
           <!-- Button trigger modal -->
  
-          <h2>Termíny</h2>
+          <h2><?php pll_e('Termíny'); ?></h2>
           <div class="schhedule">
             <?php $schedule = get_field('terminy'); ?>
             <?php foreach($schedule as $key => $termin): ?>
@@ -146,7 +150,7 @@ $desc = get_field('kratky_popis');
                           </button>
                         </div>
                         <div class="modal-body">
-                          <h2>Záujem o zájazd</h2>
+                          <h2><?php pll_e('Záujem o zájazd'); ?></h2>
                           <div class="modal__head">
                             <?php echo $thumbnail; ?>
                             <div>
@@ -162,7 +166,7 @@ $desc = get_field('kratky_popis');
                           <p><?php echo $desc; ?></p>
                           <br>
                           <?php 
-                            echo do_shortcode('[contact-form-7 id="195" title="Zájazd"]') 
+                            echo do_shortcode(pll__('[contact-form-7 id="195" title="Zájazd"]')) 
                           ?> 
                           
                         </div>
