@@ -83,8 +83,8 @@ $desc = get_field('kratky_popis');
           <h2><?php pll_e('Informácie'); ?> </h2>
           <div class="row">
             <div class="col-md-6 ">
+              <?php $info = get_field('informacie') ?>
               <?php if($info['v_cene']): ?>
-                <?php $info = get_field('informacie') ?>
                 <div class="trip__info trip__info--green">
                   <h3 class=""><?php pll_e('V cene'); ?> <i class="fa-solid fa-check"></i></h3>
                   <ul> 

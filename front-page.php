@@ -114,7 +114,7 @@ get_header();
               <span class="h3 yellow"><?php echo $blogNews['zlty_nadpis']; ?> </span>
               <h2><?php echo $blogNews['biely_nadpis']; ?>  </h2>
             </div>
-            <a href="<?php bloginfo('template_url');  ?>/blog" class="btn btn__transparent btn__transparent--black">
+            <a href="<?php pll_e('/blog') ?>" class="btn btn__transparent btn__transparent--black">
             <?php pll_e('ZOBRAZIŤ BLOG'); ?> 
             </a>
           </div>

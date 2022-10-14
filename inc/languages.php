@@ -29,11 +29,13 @@ if (function_exists('pll_register_string')) {
     pll_register_string('morocco', 'Kontaktujte nás');
     pll_register_string('morocco', 'Kontakt');
     pll_register_string('morocco', '/zajazdy');
+    pll_register_string('morocco', '/blog');
     pll_register_string('morocco', 'V cene');
     pll_register_string('morocco', 'V cene nie je zahrnuté');
     pll_register_string('morocco', 'Termíny');
     pll_register_string('morocco', 'Záujem o zájazd');
     pll_register_string('morocco', '16');
+    pll_register_string('morocco', '11');
     // pll_register_string('morocco', 'Informácie');
   
 } 

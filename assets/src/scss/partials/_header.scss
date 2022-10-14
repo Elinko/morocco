@@ -7,6 +7,30 @@
         min-height: 100px;
    
     }
+
+    .navbar-brand {
+        img {
+            width: 170px;
+
+            @include media-breakpoint-down(md) {
+                width: 120px;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        padding: 0;
+        overflow: hidden;
+        
+        .dropdown-item {
+            transition: 0.3s all;
+            
+            &:hover {
+                color: #fff;
+                background-color: $blue;
+            }
+        }
+    }
     
     
     .navbar-nav {

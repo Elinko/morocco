@@ -1,5 +1,5 @@
 <?php  
-    $post = get_field('reklama', 11);
+    $post = get_field('reklama', pll__('11'));
  
 ?>
 
@@ -14,7 +14,7 @@
             <h3 class="yellow"><?php echo $post['zlty_nadpis'] ?></h3> 
             <h2><?php echo $post['nadpis'] ?></h2>
             <?php echo $post['kratky_popis'] ?>
-            <a href="<?php echo get_permalink('11') ?>" class="btn btn__blue"><?php pll_e( 'Mám záujem' ); ?></a>
+            <a href="<?php echo get_permalink(pll__('11')) ?>" class="btn btn__blue"><?php pll_e( 'Mám záujem' ); ?></a>
             </div>
         </div>
         </div>

@@ -44,13 +44,12 @@
         <div  class="container">
           <div class="row">
             <div class="col-lg-6">
-              <a href="">Logo</a>
+              <a href="<?php echo get_home_url() ?>">
+                <img src="<?php bloginfo('template_url');  ?>/assets/images/logo-morocco.png" width="100px" alt="">
+              </a>
             </div>
             <div class="col-lg-6">
-              <p>
-              <?php pll_e('Sme členmi'); ?>  <a href="" class="link">Slovenská asociácia cestovných kancelárii a cestovných agentúr</a>
-              </p>
-                
+               
             </div>
           </div>
         </div>

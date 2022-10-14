@@ -18,7 +18,7 @@
             <span class="h3 yellow"><?php pll_e('Vreľo'); ?> </span>
             <h2><?php pll_e('Odporúčame'); ?> </h2>
         </div>
-        <a href="<?php bloginfo('template_url');  ?><?php pll_e('/zajazdy'); ?>" class="btn btn__transparent btn__transparent--black">
+        <a href="<?php pll_e('/zajazdy'); ?>" class="btn btn__transparent btn__transparent--black">
         <?php pll_e('ZOBRAZIŤ VŠETKY PONUKY'); ?> 
         </a>
         </div>
