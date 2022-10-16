@@ -42,7 +42,7 @@ get_header();
 
       <section class="why-us">
         <?php 
-          $whyus = get_field('preco_prave_my'); 
+          $whyus = get_field('preco_prave_my', pll__('16')); 
           // var_dump($whyus);
         ?>
         <div class="container">
