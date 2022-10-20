@@ -64,4 +64,38 @@
             margin-left: 10px;
         }
     }
+
+
+    
+    .switcher  {
+  
+        font-family: Nunito, sans-serif;
+        width: 130px;
+
+        .selected {
+            color: #222222 !important;
+            background-color: #F5F5F5;
+            border-radius: 69px;
+            
+            a {
+                border: none;
+                
+                text-transform: uppercase;
+                text-decoration: none !important;
+                transition: 0.3s all;
+                font-weight: 900;
+                font-size: 1.4rem;
+                display: flex;
+                align-items: center;
+                
+                img {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .option {
+            border: none;
+        }
+    }
 }

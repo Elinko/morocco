@@ -56,10 +56,10 @@
       </div> 
     </footer>
 
-<?php wp_footer(); ?>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
- 
-<script src="<?php bloginfo('template_url');  ?>/assets/dist/js/all.js?_v=6ju0w" async></script>
+    <?php wp_footer(); ?>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="<?php bloginfo('template_url');  ?>/assets/dist/js/all.js?_v=6ju0w" async></script>
+
 
 </body>
 </html>

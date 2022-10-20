@@ -1,3 +1,33 @@
+var $jq = jQuery.noConflict();
+$jq(document).ready(function() { 
+  $jq('.home-slider').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: false 
+  });
+
+  $jq('.tolding-about__wrapper').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });
+
+  $jq('.trip__slider').slick({
+      dots: false,
+      infinite: true,
+      arrows: true,
+      autoplay: true,
+      speed: 1000,
+      slidesToShow: 1,
+      adaptiveHeight: false
+  });
+
+});
+
 $(document).ready(function() {
 
     /*var lazyLoadInstance = new LazyLoad({
@@ -9,33 +39,37 @@ $(document).ready(function() {
         //console.log('hamburger');
         $(this).toggleClass('is-active')
     })
-     
-        
-    $('.home-slider').slick({
-        dots: true,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: false 
-    });
- 
-    $('.tolding-about__wrapper').slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: true
-    });
 
-    $('.trip__slider').slick({
-        dots: false,
-        infinite: true,
-        arrows: true,
-        autoplay: true,
-        speed: 1000,
-        slidesToShow: 1,
-        adaptiveHeight: false
-    });
+
+ 
+      
+    //   $('.home-slider').slick({
+    //     dots: true,
+    //     infinite: false,
+    //     speed: 300,
+    //     slidesToShow: 1,
+    //     adaptiveHeight: false 
+    // });
+    // $('.tolding-about__wrapper').slick({
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 300,
+    //     slidesToShow: 1,
+    //     adaptiveHeight: true
+    // });
+
+    // $('.trip__slider').slick({
+    //     dots: false,
+    //     infinite: true,
+    //     arrows: true,
+    //     autoplay: true,
+    //     speed: 1000,
+    //     slidesToShow: 1,
+    //     adaptiveHeight: false
+    // });
+  
+ 
+ 
 
     jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
     jQuery('.quantity').each(function() {

@@ -37,6 +37,7 @@ const paths = {
       // 'assets/src/js/includes/jquery-3.3.1.min.js',
       'assets/src/js/includes/popper.min.js',
       'assets/src/js/includes/bootstrap.min.js',
+      // 'assets/src/js/includes/slick.js',
       // 'assets/src/js/includes/owl.carousel.min.js',
       //'node_modules/slick-carousel/slick/slick.min.js',
       //'assets/src/js/includes/masonry.pkgd.min.js',

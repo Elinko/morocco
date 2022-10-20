@@ -89,7 +89,7 @@
               <a href="">
                 <img src="<?php bloginfo('template_url');  ?>/assets/images/ico_ig.svg" alt="">
               </a>
-              <div class="dropdown">
+              <!-- <div class="dropdown">
                 <button class="btn btn__white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php 
                   if($lang == 'sk_SK') {
@@ -103,7 +103,8 @@
                   <a class="dropdown-item" href="/"><?php pll_e('Slovensky'); ?> </a>
                   <a class="dropdown-item" href="/en"><?php pll_e('Anglicky'); ?> </a> 
                 </div>
-              </div>
+              </div> -->
+              <?php echo do_shortcode('[gtranslate]'); ?>
             </div>
 
           	 
