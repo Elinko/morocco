@@ -50,8 +50,8 @@ get_header();
             <?php  $previous = get_previous_post() ;
               $next = get_next_post();
             ?>
-            <a href="<?php echo $previous->guid; ?>" class="d-flex align-items-center"><span class="slick-arroww slick-prev"></span><strong>Predošlí článok</strong>  </a>  
-            <a href="<?php echo $next->guid; ?>    " class="d-flex align-items-center"><strong>Nasledujúci článok</strong> <span class="slick-arroww slick-next"></span></a> 
+            <a href="<?php echo $previous->guid; ?>" class="d-flex align-items-center"><span class="slick-arroww slick-prev"></span><strong><?php pll_e('Predošlý článok'); ?></strong>  </a>  
+            <a href="<?php echo $next->guid; ?>    " class="d-flex align-items-center"><strong><?php pll_e('Nasledujúci článok'); ?></strong> <span class="slick-arroww slick-next"></span></a> 
           </div>
         </div>
       </section>

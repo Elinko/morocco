@@ -30,7 +30,8 @@ get_header();
               </div>
             </div>
             <div class="col-md-6 item-heading__img">
-              <img src="<?= get_field('obrazok'); ?>	" alt="">
+            <?php echo get_the_post_thumbnail() ?>
+
             </div>
           </div>
         </div>
