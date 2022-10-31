@@ -36,10 +36,15 @@ if (function_exists('pll_register_string')) {
     pll_register_string('morocco', 'Záujem o zájazd');
     pll_register_string('morocco', '16');
     pll_register_string('morocco', '11');
+    pll_register_string('morocco', 'Predošlý článok');
+    pll_register_string('morocco', 'Nasledujúci článok');
+
     // pll_register_string('morocco', 'Informácie');
   
 } 
 ?>
+
+ 
 
 <?php pll_e(''); ?>
 

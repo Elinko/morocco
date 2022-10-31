@@ -35,6 +35,8 @@ const paths = {
   scripts: {
     srcincludes:[
       // 'assets/src/js/includes/jquery-3.3.1.min.js',
+      // 'assets/src/js/includes/cookiebar-en.js',
+      // 'assets/src/js/includes/cookiebar-sk.js',
       'assets/src/js/includes/popper.min.js',
       'assets/src/js/includes/bootstrap.min.js',
       // 'assets/src/js/includes/slick.js',
