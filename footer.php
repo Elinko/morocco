@@ -32,7 +32,7 @@
             <div class="col-md-4 col-xl-3 social">
               <strong><?php pll_e('SOCIÁLNE SIETE'); ?> </strong>
               <div class="d-flex">
-                <a href="https://www.facebook.com/Morocco-dream-tour-112309864910282" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.facebook.com/Morocco-dream-tour-112309864910282/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
                 <a href="https://www.instagram.com/morocco_dream_tour/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
               </div>
             </div>

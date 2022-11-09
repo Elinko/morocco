@@ -89,10 +89,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			?> 
 
 			<div class="social">
-              <a href="">
+              <a href="https://www.facebook.com/Morocco-dream-tour-112309864910282/"  target="_blank">
                 <img src="<?php bloginfo('template_url');  ?>/assets/images/ico_fb.svg" alt="">
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/morocco_dream_tour/" target="_blank">
                 <img src="<?php bloginfo('template_url');  ?>/assets/images/ico_ig.svg" alt="">
               </a>
               <!-- <div class="dropdown">
