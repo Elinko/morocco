@@ -137,9 +137,12 @@ $desc = get_field('kratky_popis');
                 <div class="schhedule__item--col price">
                   <h3><?php echo $termin['cena']; ?>&nbsp;€</h3>
                 </div>
-                <div class="schhedule__item--col totrip">
+                <div class="schhedule__item--col totrip"> 
+                <?php if($termin['sold'][0] == 'Vypredané' ): ?>
+                  <strong class="btn btn__transparent btn__transparent--black">Vypredané</strong>
+                <?php else: ?>
                   <a href="" class="link-arrow" data-toggle="modal" data-target="#modal<?php echo $key ?>"  data-termin="<?php echo $termin['datum']['od']; ?> - <?php echo $termin['datum']['do']; ?>" data-title="<?php echo $title; ?>" data-url="<?php echo get_the_permalink(); ?>">Mám záujem <i class="fa-solid fa-arrow-right"></i></a> 
-
+                <?php endif; ?>
                   <!-- Modal -->
                   <div class="modal fade" id="modal<?php echo $key ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
